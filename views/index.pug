@@ -5,53 +5,119 @@ block hero-unit
     .container
       
 block content
-  .card-group
-    .card
-      img.card-img-top(src='...', alt='Card image cap')
-      .card-body
-        h4.card-title Card title
-        p.card-text
-          | This is a wider card with supporting 
-      .card-footer
-        small.text-muted Last updated 3 mins ago
-    .card
-      img.card-img-top(src='...', alt='Card image cap')
-      .card-body
-        h4.card-title Card title
-        p.card-text This card has supporting text
-      .card-footer
-        small.text-muted Last updated 3 mins ago
-    .card
-      img.card-img-top(src='...', alt='Card image cap')
-      .card-body
-        h4.card-title Card title
-        p.card-text
-          | This is a wider card with supporting text 
-      .card-footer
-        small.text-muted Last updated 3 mins ago
-  br
-  br
-  .card-group
-    .card
-      img.card-img-top(src='...', alt='Card image cap')
-      .card-body
-        h4.card-title Card title
-        p.card-text
-          | This is a wider card with supporting 
-      .card-footer
-        small.text-muted Last updated 3 mins ago
-    .card
-      img.card-img-top(src='...', alt='Card image cap')
-      .card-body
-        h4.card-title Card title
-        p.card-text This card has supporting text
-      .card-footer
-        small.text-muted Last updated 3 mins ago
-    .card
-      img.card-img-top(src='...', alt='Card image cap')
-      .card-body
-        h4.card-title Card title
-        p.card-text
-          | This is a wider card with supporting text 
-      .card-footer
-        small.text-muted Last updated 3 mins ago
+  .g-grid
+    .text-box
+      p.font-event
+        | Events for you in
+        a.font-Seoul(href='http://www.naver.com') Seoul, Republic of Korea
+          | 
+          i.fa.fa-spinner(aria-hidden='true')
+          
+    br
+
+    .card-deck
+      .card
+        .card-body
+          img(src='image/card1.jpg', alt='card1')
+        div
+          p.first-p SAT. OCT 7 10:00 PM
+          p.second-p KRAVE SATURDAYS - FREE ENTRY
+          br
+          p.third-p TRUTH NIGHTCLUB (Formerly Krave),Atlanta
+        .card-footer
+          a.card-text(href='..') #Art
+          a.card-text(href='..') #Performance
+          .card-post1
+            a.link-post1(href='..')
+              i.fa.fa-share-square-o(aria-hidden='true')
+            a.link-post1(href='..')
+              i.fa.fa-bookmark-o(aria-hidden='true')
+      .card
+        .card-body
+          img(src='image/card2.jpg', alt='card2')
+        div
+          p.first-p FRI, OCT 20 7:00 PM
+          p.second-p Grease, School Edition - October 20, 2017
+          br
+          p.third-p Seoul Foreign School| Yeonhui-radius
+        .card-footer
+          a.card-text(href='..') #Hobbys
+          a.card-text(href='..') #Party~
+          .card-post1
+            a.link-post1(href='..')
+              i.fa.fa-share-square-o(aria-hidden='true')
+            a.link-post1(href='..')
+              i.fa.fa-bookmark-o(aria-hidden='true')
+      .card
+        .card-body
+          img(src='image/card3.jpg', alt='card3')
+        div
+          p.first-p THU. NOV 9 9:00 PM
+          p.second-p MAR+IN GARRIX WORLDCLUBDOME
+          br
+          p.third-p Seoul, Seoul
+        .card-footer
+          a.card-text(href='..') #WorldClub
+          a.card-text(href='..') #Sales
+          .card-post1
+            a.link-post1(href='..')
+              i.fa.fa-share-square-o(aria-hidden='true')
+            a.link-post1(href='..')
+              i.fa.fa-bookmark-o(aria-hidden='true')
+
+    br
+    .card-deck
+      .card
+        .card-body
+          img(src='image/card1.jpg', alt='card1')
+        div
+          p.first-p SAT. OCT 7 10:00 PM
+          p.second-p KRAVE SATURDAYS - FREE ENTRY
+          br
+          p.third-p TRUTH NIGHTCLUB (Formerly Krave),Atlanta
+        .card-footer
+          a.card-text(href='..') #Art
+          a.card-text(href='..') #Performance
+          .card-post1
+            a.link-post1(href='..')
+              i.fa.fa-share-square-o(aria-hidden='true')
+            a.link-post1(href='..')
+              i.fa.fa-bookmark-o(aria-hidden='true')
+      .card
+        .card-body
+          img(src='image/card2.jpg', alt='card2')
+        div
+          p.first-p FRI, OCT 20 7:00 PM
+          p.second-p Grease, School Edition - October 20, 2017
+          br
+          p.third-p Seoul Foreign School| Yeonhui-radius
+        .card-footer
+          a.card-text(href='..') #Hobbys
+          a.card-text(href='..') #Party~
+          .card-post1
+            a.link-post1(href='..')
+              i.fa.fa-share-square-o(aria-hidden='true')
+            a.link-post1(href='..')
+              i.fa.fa-bookmark-o(aria-hidden='true')
+      .card
+        .card-body
+          img(src='image/card3.jpg', alt='card3')
+        div
+          p.first-p THU. NOV 9 9:00 PM
+          p.second-p MAR+IN GARRIX WORLDCLUBDOME
+          br
+          p.third-p Seoul, Seoul
+        .card-footer
+          a.card-text(href='..') #WorldClub
+          a.card-text(href='..') #Sales
+          .card-post1
+            a.link-post1(href='..')
+              i.fa.fa-share-square-o(aria-hidden='true')
+            a.link-post1(href='..')
+              i.fa.fa-bookmark-o(aria-hidden='true')
+
+    .btn-center
+      button.btn.btn-outline-primary(type='button') See More
+
+    .test-position
+      p.text-ctg Browse by Top Categories
