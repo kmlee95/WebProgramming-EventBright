@@ -12,4 +12,8 @@ function needAuth(req, res, next) {
   }
 }
 
+router.get('/', needAuth, (req, res, next) => {
+  res.render('events/create');
+});
+
 module.exports = router;

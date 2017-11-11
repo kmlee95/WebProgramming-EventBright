@@ -2,11 +2,14 @@
 
 body {
   font: 1rem 'Montserrat', sans-serif;
-  margin-top: 50px;
+  margin-top: 0px;
   padding-top: 0em;
   & > .main-content {
     min-height: 400px;
   }
+}
+.fixed-top{
+  position:relative;
 }
 input {
     word-spacing: 1px;
@@ -15,13 +18,13 @@ a:hover {
   text-decoration: none;
 }
 
-.jumbotron {
+/*.jumbotron {
   margin-top: -1em;
   background: url('/images/beautiful1.jpg') no-repeat left center;
   min-height: 20em;
   color: #fff;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-}
+}*/
 .g-grid{
   max-width: 1080px;
   margin-left: auto;
@@ -30,6 +33,7 @@ a:hover {
   padding-left: 15px;
   padding-right: 15px;
 }
+
 /*컨테인 박스*/
 .contain-box{
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
@@ -198,5 +202,4 @@ a:hover {
     color: #bababa;
     position: absolute;
   }
-
 } 

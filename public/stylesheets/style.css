@@ -2,10 +2,13 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
 body {
   font: 1rem 'Montserrat', sans-serif;
-  margin-top: 50px;
+  margin-top: 0px;
   padding-top: 0em; }
   body > .main-content {
     min-height: 400px; }
+
+.fixed-top {
+  position: relative; }
 
 input {
   word-spacing: 1px; }
@@ -13,13 +16,13 @@ input {
 a:hover {
   text-decoration: none; }
 
-.jumbotron {
+/*.jumbotron {
   margin-top: -1em;
-  background: url("/images/beautiful1.jpg") no-repeat left center;
+  background: url('/images/beautiful1.jpg') no-repeat left center;
   min-height: 20em;
   color: #fff;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
-
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}*/
 .g-grid {
   max-width: 1080px;
   margin-left: auto;
@@ -265,5 +268,11 @@ a:hover {
   .show .answer .content {
     margin-bottom: 0.5em;
     color: #bbb; }
+
+.bg-light {
+  background-color: #ffffff !important; }
+
+.menu-right {
+  float: right; }
 
 /*# sourceMappingURL=style.css.map */
