@@ -1,11 +1,37 @@
 extends layout
 
 block hero-unit
-  .jumbotron
-    .container
+  .main-pic
+    #carouselExampleSlidesOnly.carousel.slide(data-ride='carousel')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='images/beautiful1.jpg', alt='First slide')
+        .carousel-item
+          img.d-block.w-100(src='images/beautiful2.jpg', alt='Second slide')
+        .carousel-item
+          img.d-block.w-100(src='images/beautiful3.jpg', alt='Third slide')
+  .container
       
 block content
   .g-grid
+    .contain-box
+      h1.h-orange Find your next experience
+      .line-position
+        .block1
+          input.categori(type='text' placeholder='Search events or categories')
+        .block2
+          input.categori2(type='text' placeholder='City or lacation')
+        .block3
+          select
+            option(value='All Dates', selected='') All Dates
+            option(value='Today') Today
+            option(value='Tomorrow') Tomorrow
+            option(value='This Week') This Week
+            option(value='This Weekend') This Weekend
+            option(value='Next Week') Next Week
+            option(value='Next Month') Next Month
+        button.btn.btn-primary.btn-sm(type='button') SEARCH
+   
     .text-box
       p.font-event
         | Events for you in

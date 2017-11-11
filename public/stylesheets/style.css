@@ -8,87 +8,13 @@ body {
 
 a:hover {
   text-decoration: none; }
-.g-grid{
-  max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 .jumbotron {
   margin-top: -1em;
   background: url("/images/beautiful1.jpg") no-repeat left center;
   min-height: 20em;
   color: #fff;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
-
-.card-deck {
-  margin-left: 1%;
-  margin-right: 1%;
-}
-.font-event{
-  font-size: 1.4em;
-  color: rgba(0,0,0,.5);
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-top: 20px;
-}
-.font-Seoul{
-  font-weight: bold;
-  color:#2ECCFA;
-}
-.font-Seoul:hover{
-  font-weight: bold;
-  color:#013653;
-  text-decoration: underline;
-}
-.text-box{
-  margin:0 auto;
-  text-align:center;
-}
-.text-box p{
-  margin-bottom: 0;
-}
-
-/*카드아래버튼*/
-.btn-center{
-  margin:0 auto;
-  text-align:center;
-  margin-top:20px;
-  padding-left:15px;
-  padding-right:15px;
-}
-.btn-center .btn-outline-primary {
-  padding-top:10px;
-  padding-bottom:10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  color:#0278b8;
-  border-color: #0278b8;
-}
-.btn-center .btn-outline-primary:hover {
-  color:#ffffff;
-  border-color: #0278b8;
-  background-color: #0278b8;
-}
-.btn-center .btn{
-  font-weight: bold;
-}
-
-/*버튼 아래 글자*/
-.test-position{
-  text-align:center;
-  margin-top:20px;
-  padding-left:15px;
-  padding-right:15px;
-}
-.test-position .text-ctg{
-  margin-top:20px;
-  padding-top:30px;
-  padding-bottom:15px;
-  font-size: 1.5em;
-  line-height: 30px;
-  font-weight: 200;
-  color:rgba(0,0,0,.5);
-}
 
 .form-actions {
   padding: 19px 20px 20px;
