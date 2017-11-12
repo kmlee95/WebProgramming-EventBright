@@ -1,6 +1,241 @@
+.sub-menu{
+    font-family: "Benton Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    color: #45494E;
+    font-size: 15px;
+    font-weight: 400;
+    height: 57px;
+    max-width: none;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #D2D6DF;
+}
+.sub-menu .navbar{
+    border-bottom:1px solid rgba(0,0,0,.5);
+}
 .bg-light {
     background-color: #ffffff!important;
 }
 .menu-right{
     float:right
+}
+.sub-menu .navbar-expand-lg .navbar-collapse {
+    display: flex;
+    flex-direction: row-reverse;/*이것때문에 토글이제대로안됨*/
+}
+.sub-menu .navbar-nav .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+.brand-item .navbar-brand {
+    display: block;
+    float: left;
+    margin: 0px 20px;
+    color:orange; 
+    width: 110px;
+}
+
+.sub-div1{
+    padding-bottom:15px;
+    border-bottom:1px solid #D8D8D8
+}
+/*중간 sub title*/
+.sub-style1{
+    padding:20px;
+    margin-top:20px;
+}
+.sub-style1 .sub-menu1{
+    padding-left:15px;
+    font-size: 1.7em;
+    color: rgba(0,0,0,.5);
+    line-height: 30px;
+    width: 500px;
+}
+
+/*세개 버튼*/
+.eds-btn {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    position: relative;
+    height: 40px;
+    padding-top: 1px;
+    padding-left: 31px;
+    padding-right: 31px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    line-height: 22px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    color: #007f8c;
+    fill: #007f8c;
+    background: transparent;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+    border-radius: 40px;
+    cursor: pointer;
+    -webkit-transition: all .4s cubic-bezier(.4,0,.3,1);
+    transition: all .4s cubic-bezier(.4,0,.3,1);
+    font-size:15px;
+}
+.eds-btn--neutral {
+    border-color: #eff2f5;
+    background-color: #fff;
+    color: #f6682f;
+    fill: #45494e;
+}
+.eds-btn:hover {
+    text-decoration: none;
+    background-color: #f8f8fa;
+}
+.eds-btn--neutral:focus, .eds-btn--neutral:hover {
+    border-color: #f8f8fa;
+}
+
+
+/*첫번째 메뉴*/
+
+.form-horizontal{
+    margin-top:20px;
+}
+.form-control{
+    width:100%;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: auto;
+}
+.col-sm-9 {
+    width: 80%;
+}
+.group-label {
+    /* margin-bottom: 20px; */
+    padding-bottom: 40px;
+}
+
+
+@media (min-width: 576px){
+    .col-sm-2 {
+        max-width: 150%;
+    }
+}
+
+.formgroup1 .form-group{
+    width:70%;
+}
+.formgroup2 .form-group{
+    width:70%;
+}
+.formgroup3 .form-group{
+    width:70%;
+}
+.formgroup4 .form-group{
+    width:70%;
+}
+
+.form-horizontal .control-label {
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: 3px;
+    font-size:15px;
+}
+
+input[type=file] {
+    font-size: 14px;
+}
+/*creadit card 부분*/
+.credit-edit1 div{
+    float:right;
+    margin-right:10px;  
+}
+.credit-main1{
+    font-weight:400;
+}
+/*creadit card 버튼부분*/
+.cmn-toggle 
+{
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+
+.cmn-toggle + label 
+{
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input.cmn-toggle-round-flat + label 
+{
+  padding: 2px;
+  width: 75px;
+  height: 30px;
+  background-color: #dddddd;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  -o-transition: background 0.4s;
+  transition: background 0.4s;
+}
+
+input.cmn-toggle-round-flat + label:before, input.cmn-toggle-round-flat + label:after 
+{
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+input.cmn-toggle-round-flat + label:before 
+{
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #fff;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  -o-transition: background 0.4s;
+  transition: background 0.4s;
+}
+
+input.cmn-toggle-round-flat + label:after 
+{
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  width: 22px;
+  background-color: #dddddd;
+  -webkit-border-radius: 52px;
+  -moz-border-radius: 52px;
+  -ms-border-radius: 52px;
+  -o-border-radius: 52px;
+  border-radius: 52px;
+  -webkit-transition: margin 0.4s, background 0.4s;
+  -moz-transition: margin 0.4s, background 0.4s;
+  -o-transition: margin 0.4s, background 0.4s;
+  transition: margin 0.4s, background 0.4s;
+}
+
+input.cmn-toggle-round-flat:checked + label 
+{
+  background-color: #27A1CA;
+}
+
+input.cmn-toggle-round-flat:checked + label:after 
+{
+  margin-left: 45px;
+  background-color: #27A1CA;
 }
