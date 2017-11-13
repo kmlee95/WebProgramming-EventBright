@@ -57,16 +57,14 @@ html
             .sub-style1
                 .sub-menu1
                     h3 Create An Event
-                .sub-button1
-                    button.btn.btn-warning(type='button') Save
-                    button.btn.btn-warning(type='button') Preview
-                    button.btn.btn-warning(type='button') Publish
-            button#save-event-button.eds-btn.eds-btn--link.eds-btn--neutral(type='button', data-automation='save-event')
-                | Save
-            button#save-event-button.eds-btn.eds-btn--link.eds-btn--neutral(type='button', data-automation='save-event')
-                | Preview
-            button#save-event-button.eds-btn.eds-btn--link.eds-btn--neutral(type='button', data-automation='save-event')
-                | Publish
+
+                .sub-button1   
+                    button#save-event-button.eds-btn.eds-btn--link.eds-btn--neutral(type='button', data-automation='save-event')
+                        | Save
+                    button#save-event-button.eds-btn.eds-btn--link.eds-btn--neutral(type='button', data-automation='save-event')
+                        | Preview
+                    button#save-event-button.eds-btn.eds-btn--link.eds-btn--neutral(type='button', data-automation='save-event')
+                        | Publish
 
 
         .container
@@ -118,11 +116,11 @@ html
                                             option(value='23') 2023
                         
                             .group-label2
-                                label.col-sm-3.control-label(for='expiry-month') End
+                                label.col-sm-3.control-label(for='expiry-month2') End
                                 .col-sm-9
                                     .row
                                         .col-xs-3
-                                            select#expiry-month.form-control.col-sm-2(name='expiry-month')
+                                            select#expiry-month2.form-control.col-sm-2(name='expiry-month2')
                                                 option Month
                                                 option(value='01') Jan (01)
                                                 option(value='02') Feb (02)
@@ -137,7 +135,7 @@ html
                                                 option(value='11') Nov (11)
                                                 option(value='12') Dec (12)
                                         .col-xs-3
-                                            select.form-control(name='expiry-year')
+                                            select.form-control(name='expiry-year2')
                                                 option(value='13') 2013
                                                 option(value='14') 2014
                                                 option(value='15') 2015
@@ -168,10 +166,84 @@ html
             form.form-horizontal(role='form')
                 fieldset
                 legend 2.Credit Ticket
+
             .credit-edit1
-                
                 .switch
                     input#cmn-toggle-4.cmn-toggle.cmn-toggle-round-flat(type='checkbox')
                     label(for='cmn-toggle-4')
                 .credit-main1
                     h4 Reserved Seating:
+                
+            .credit-edit2
+                p.credit-font2 What type of ticket would you like to start with?
+                button.btn.btn-warning(type='button')
+                    i.fa.fa-check-square-o(aria-hidden='true')
+                    |   Free Ticket
+                button.btn.btn-warning(type='button')
+                    i.fa.fa-check-square-o(aria-hidden='true')
+                    |   Paid Ticket
+                button.btn.btn-warning(type='button')
+                    i.fa.fa-check-square-o(aria-hidden='true')
+                    |   Donation
+
+        .container
+            form.form-horizontal(role='form')
+                fieldset
+                legend 3.Additional Setting
+
+            .addition-model
+                .add-edit1
+                    h4 LISTING PRIVACY
+                    .edit1-block
+                        input#addpublic(type='radio', name='public', value='1', checked='')
+                        label(for='addpublic')
+                            | Public page:
+                            span#addspan
+                                |     Discoverable by anyone on Eventbrite, our distribution partners, and search engines.
+                    .edit2-block   
+                        input#addpublic2(type='radio', name='public', value='1', checked='')
+                        label(for='addpublic2')
+                            | Private page:
+                            span#addspan2
+                                |     Accessible only by people you specify.
+                .add-edit2    
+                    h4 EVENT TYPE
+                    .event-type
+                        select#event-tymenu.form-control(name='eventtype')
+                            option Select the type of event
+                            option(value='Signing') Apperance or Signing 
+                            option(value='Attraction') Attraction 
+                            option(value='Trip') Camp, Trip, or Retreat 
+                            option(value='Class') Class, Training, or Workshop 
+                            option(value='Concert') Concert or Performance 
+                            option(value='Conference') Conference 
+                            option(value='Convention') Convention 
+                            option(value='Dinner') Dinner or Gala 
+                            option(value='Festival') Festival or Fair 
+                            option(value='Party') Party or Social Gathering 
+                            option(value='Game') Game or Competition 
+                            option(value='Expo') Tradeshow, Consumer Show, or Expo
+
+                    h4 EVENT TOPIC
+                    .event-topic
+                        select#event-tomenu.form-control(name='eventtopic')
+                            option Select a topic
+                            option(value='Boat') Auto, Boat & Air
+                            option(value='Business') Business & Professional
+                            option(value='Community') Community & Culture
+                            option(value='Family') Family & Education
+                            option(value='Fashion') Fashion & Beauty
+                            option(value='Film') Film, Media & Entertainment
+                            option(value='Food') Food & Drink
+                            option(value='Government') Government & Politics
+                            option(value='Health') Health & Wellness
+                            option(value='Hobbies') Hobbies & Special Interest
+                            option(value='Home') Home & Lifestyle
+                            option(value='Music') Music
+
+                h4 REMAINING TICKETS
+                .add-edit3
+                    input#addremain(type='checkbox', name='remain', value='4')
+                    label(for='addremain')
+                        span#addrespan     
+                            |      Show the number of remaining tickets on your event listing

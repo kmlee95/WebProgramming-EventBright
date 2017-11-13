@@ -281,6 +281,9 @@ a:hover {
   background-color: white;
   border-bottom: 1px solid #D2D6DF; }
 
+.menu-right .nav-item {
+  margin-left: 20px; }
+
 .sub-menu .navbar {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
 
@@ -299,6 +302,12 @@ a:hover {
   right: 0;
   left: auto; }
 
+.navbar-light .navbar-brand:hover {
+  color: orange; }
+
+.navbar-light .navbar-brand:focus {
+  color: orange; }
+
 .brand-item .navbar-brand {
   display: block;
   float: left;
@@ -308,12 +317,18 @@ a:hover {
 
 .sub-div1 {
   padding-bottom: 15px;
-  border-bottom: 1px solid #D8D8D8; }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
 
 /*중간 sub title*/
 .sub-style1 {
   padding: 20px;
-  margin-top: 20px; }
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row; }
+
+.sub-style1 .sub-button1 {
+  margin-left: auto;
+  line-height: 60px; }
 
 .sub-style1 .sub-menu1 {
   padding-left: 15px;
@@ -383,16 +398,16 @@ select.form-control:not([size]):not([multiple]) {
     max-width: 150%; } }
 
 .formgroup1 .form-group {
-  width: 70%; }
+  width: 80%; }
 
 .formgroup2 .form-group {
-  width: 70%; }
+  width: 80%; }
 
 .formgroup3 .form-group {
-  width: 70%; }
+  width: 80%; }
 
 .formgroup4 .form-group {
-  width: 70%; }
+  width: 80%; }
 
 .form-horizontal .control-label {
   text-align: right;
@@ -403,15 +418,20 @@ select.form-control:not([size]):not([multiple]) {
 input[type=file] {
   font-size: 14px; }
 
-/*creadit card 부분*/
+/*creadit card 부분(reserved seating*/
+.credit-edit1 {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-bottom: 20px;
+  margin-bottom: 35px; }
+
 .credit-edit1 div {
-  float: right;
   margin-right: 10px; }
 
 .credit-main1 {
   font-weight: 400; }
 
-/*creadit card 버튼부분*/
+/*creadit card toggle 버튼부분*/
 .cmn-toggle {
   position: absolute;
   margin-left: -9999px;
@@ -485,5 +505,87 @@ input.cmn-toggle-round-flat:checked + label {
 input.cmn-toggle-round-flat:checked + label:after {
   margin-left: 45px;
   background-color: #27A1CA; }
+
+/*credit 내용부분*/
+.credit-edit2 {
+  position: relative;
+  text-align: center;
+  margin: 0 auto; }
+
+.credit-font2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #848484; }
+
+/*credit 내용부분-버튼*/
+.credit-edit2 {
+  margin-bottom: 30px; }
+
+.credit-edit2 .btn {
+  padding: 10px 22px;
+  font-size: 17px;
+  margin-right: 30px;
+  font-weight: bold; }
+
+/*3. additional Settings*/
+.addition-model {
+  width: 85%;
+  margin: 0 auto; }
+
+.addition-model h4 {
+  font-weight: 600; }
+
+.add-edit1 {
+  margin-bottom: 20px; }
+
+.add-edit1 div {
+  display: block; }
+
+.add-edit1 input[type=radio] {
+  margin-right: 7px; }
+
+.add-edit1 label {
+  vertical-align: middle;
+  font-size: 15px;
+  color: #282C35;
+  line-height: 22px; }
+
+#addspan {
+  font-size: 12px;
+  line-height: 18px;
+  vertical-align: middle;
+  color: #666A73; }
+
+#addspan2 {
+  font-size: 12px;
+  line-height: 18px;
+  vertical-align: middle;
+  color: #666A73; }
+
+.add-edit2 {
+  margin-bottom: 30px; }
+
+.add-edit2 h4 {
+  margin-bottom: 10px; }
+
+.event-type select.form-control {
+  height: auto;
+  width: 45%; }
+
+.event-topic select.form-control {
+  height: auto;
+  width: 30%; }
+
+.add-edit3 {
+  padding-bottom: 50px;
+  margin-bottom: 50px; }
+
+.add-edit3 input[type=checkbox] {
+  margin-right: 7px; }
+
+.add-edit3 #addrespan {
+  font-size: 15px;
+  color: #282C35; }
 
 /*# sourceMappingURL=style.css.map */
