@@ -32,3 +32,9 @@ $(function() {
         });
     })
 })
+
+$(function() {
+    $('.switch').click(function(){
+        $('.credit-edit2').toggle();
+    });
+});

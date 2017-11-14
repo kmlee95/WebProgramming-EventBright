@@ -47,6 +47,11 @@
 .sub-div1{
     padding-bottom:15px;
     border-bottom:1px solid rgba(0,0,0,.5);
+    margin-bottom: 30px;
+}
+legend{
+    border-bottom: 1px solid #D8D8D8;
+    margin-bottom: 20px;
 }
 /*중간 sub title*/
 .sub-style1{
@@ -54,7 +59,9 @@
     margin-top:20px;
     display:flex;
     flex-direction: row;
-    
+}
+.sub-menu1 h3{
+    padding-top: 15px;
 }
 .sub-style1 .sub-button1{
     margin-left: auto;
@@ -110,6 +117,9 @@
 
 
 /*첫번째 메뉴*/
+label{
+    font-weight: 700;
+}
 .form-horizontal{
     margin-top:20px;
 }
@@ -120,14 +130,29 @@ select.form-control:not([size]):not([multiple]) {
     height: auto;
 }
 .col-sm-9 {
-    width: 80%;
+    width: 100%;
+    flex: 0 0 75%;
+    max-width: 100%;
+}
+.row {
+    margin-left:0px;
 }
 .group-label {
-    /* margin-bottom: 20px; */
-    padding-bottom: 40px;
+    margin-bottom: 20px;
+    display:flex;
 }
-
-
+.group-label2 {
+    /* margin-bottom: 20px; */
+    display:flex;
+}
+.col-sm-3 {
+    flex: 0 0 25%;
+    max-width: 20%;
+    text-align: right;
+}
+.col-xs-3 {
+    margin-right: 10px;
+}
 @media (min-width: 576px){
     .col-sm-2 {
         max-width: 150%;
@@ -136,15 +161,18 @@ select.form-control:not([size]):not([multiple]) {
 
 .formgroup1 .form-group{
     width:80%;
+    display:flex;
 }
 .formgroup2 .form-group{
     width:80%;
 }
 .formgroup3 .form-group{
     width:80%;
+    display:flex;
 }
 .formgroup4 .form-group{
     width:80%;
+    display:flex;
 }
 
 .form-horizontal .control-label {
@@ -167,8 +195,8 @@ input[type=file] {
 .credit-edit1 div{
     margin-right:10px;
 }
-.credit-main1{
-    font-weight:400;
+.credit-main1 h4{
+    font-size:1.3rem;
 }
 
 /*creadit card toggle 버튼부분*/
@@ -260,7 +288,7 @@ input.cmn-toggle-round-flat:checked + label:after{
     margin: 0 auto;
 }
 .credit-font2{
-    font-weight:bold;
+    font-weight:400;
     margin-bottom:20px;
     font-size:1.5rem;
     color: #848484
@@ -283,7 +311,8 @@ input.cmn-toggle-round-flat:checked + label:after{
     margin: 0 auto;
 }
 .addition-model h4{
-    font-weight:600;
+    font-weight:400;
+    font-size:1.2rem;
 }
 .add-edit1{
     margin-bottom:20px;
@@ -316,6 +345,9 @@ input.cmn-toggle-round-flat:checked + label:after{
 .add-edit2{
     margin-bottom:30px;
 }
+.event-type{
+    margin-bottom:10px;
+}
 .add-edit2 h4{
     margin-bottom:10px;
 }
@@ -328,8 +360,8 @@ input.cmn-toggle-round-flat:checked + label:after{
     width:30%;
 }
 .add-edit3{
-    padding-bottom:50px;
-    margin-bottom:50px;
+    padding-bottom:40px;
+    margin-bottom:40px;
 }
 .add-edit3 input[type=checkbox] {
     margin-right:7px;

@@ -20,7 +20,7 @@ html
         .sub-menu
             nav.navbar.navbar-expand-lg.navbar-light.bg-light
                 .brand-item
-                    a.navbar-brand(href='#') EventBrite
+                    a.navbar-brand(href='/') EventBrite
                
                 form.form-inline.my-2.my-lg-0(method='GET', role='search')
                     input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search')
@@ -201,7 +201,7 @@ html
                             span#addspan
                                 |     Discoverable by anyone on Eventbrite, our distribution partners, and search engines.
                     .edit2-block   
-                        input#addpublic2(type='radio', name='public', value='1', checked='')
+                        input#addpublic2(type='radio', name='public', value='2')
                         label(for='addpublic2')
                             | Private page:
                             span#addspan2
@@ -247,3 +247,7 @@ html
                     label(for='addremain')
                         span#addrespan     
                             |      Show the number of remaining tickets on your event listing
+
+
+        
+        include ../includes/footer
