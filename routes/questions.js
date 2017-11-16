@@ -79,9 +79,18 @@ router.delete('/:id', needAuth, catchErrors(async (req, res, next) => {
 router.post('/', needAuth, catchErrors(async (req, res, next) => {
   const user = req.user;
   var question = new Question({
-    title: req.body.title,
     author: user._id,
+    title: req.body.title,
     content: req.body.content,
+
+    groupname:req.body.groupname,
+    groupexplan:req.body.groupexplan,
+    start_at:req.body.start_at,
+    end_at:req.body.end_at,
+    
+    eventType:req.body.eventType,
+    eventTopic:req.body.eventTopic,
+
     tags: req.body.tags.split(" ").map(e => e.trim()),
   });
   await question.save();

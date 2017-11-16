@@ -1,3 +1,5 @@
+var i=0;
+
 /*이미지 불러오기*/
 $(function() {
     //이미지 클릭시 업로드창 실행
@@ -33,8 +35,3 @@ $(function() {
     })
 })
 
-$(function() {
-    $('.switch').click(function(){
-        $('.credit-edit2').toggle();
-    });
-});

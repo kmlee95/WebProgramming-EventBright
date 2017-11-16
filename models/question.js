@@ -3,14 +3,33 @@ const mongoosePaginate = require('mongoose-paginate');
 const Schema = mongoose.Schema;
 
 var schema = new Schema({
-  author: { type: Schema.Types.ObjectId, ref: 'User' },
-  title: {type: String, trim: true, required: true},
-  content: {type: String, trim: true, required: true},
+  author: { type: Schema.Types.ObjectId, ref: 'User' },//작성자
+  
   tags: [String],
   numLikes: {type: Number, default: 0},
   numAnswers: {type: Number, default: 0},
   numReads: {type: Number, default: 0},
-  createdAt: {type: Date, default: Date.now}
+
+  title: {type: String, trim: true, required: true},//이벤트제목
+  content: {type: String, trim: true, required: true},//이벤트내용
+
+  groupname: {type: String, trim: true, required: true },//조직이름
+  groupexplan: {type: String, trim: true,  required: true},//조직설명
+ 
+  start_at:{type:Date, expires: 60*60*24, default:Date.now},
+  end_at:{type:Date, expires: 60*60*24, default:Date.now},//시작,종료시간
+
+  eventType:{type:[String], trim:true},//이벤트 종류
+  eventTopic:{type:[String], trim:true}//이벤트 분야
+
+
+  //pay:{type:Boolean, default:0 },//무료, 유료
+  //ticket:{type:Number, default:0, require: true },//티켓가격
+
+  //장소
+  //이벤트 관련 사진
+  //설문
+  
 }, {
   toJSON: { virtuals: true},
   toObject: {virtuals: true}

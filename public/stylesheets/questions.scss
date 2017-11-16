@@ -11,9 +11,7 @@
   .title {
     font-size: 1.3rem;
   }
-  .content {
-    color: #aaa;
-  }
+  
   .tags {
     margin: 0.5em 0;
   }
@@ -34,17 +32,8 @@
   font-weight: bold;
   color: #0f5ca6;
 }
-.questions {
-  .content {
-    max-height: 5em;
-    overflow: hidden;
-    text-overflow:ellipsis;
-  }
-}
+
 .show {
-  .content {
-    white-space: pre-wrap;
-  }
   .buttons {
     margin: 1em 0;
   }
@@ -63,9 +52,5 @@
       padding-left: 4em;
     }
     margin-bottom: 1em;
-    .content {
-      margin-bottom: 0.5em;
-      color: #bbb;
-    }
   }
 }
