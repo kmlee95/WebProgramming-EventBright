@@ -63,15 +63,37 @@
         
     .credit-edit2
         p.credit-font2 What type of ticket would you like to start with?
-        button.btn.btn-outline-warning(type='button')
-            i.fa.fa-check-square-o(aria-hidden='true')
-            |  Free Ticket
-        button.btn.btn-outline-warning(type='button')
-            i.fa.fa-check-square-o(aria-hidden='true')
-            |  Paid Ticket
-        button.btn.btn-outline-warning(type='button')
-            i.fa.fa-check-square-o(aria-hidden='true')
-            |  Donation
+        .buttongroup
+            .firstbutton
+                button.btn.btn-outline-warning(type='button')
+                    i.fa.fa-check-square-o(aria-hidden='true')
+                    |  Free Ticket
+            .secondbutton
+                button.btn.btn-outline-warning(type='button')
+                    i.fa.fa-check-square-o(aria-hidden='true')
+                    |  Paid Ticket
+            .thirdbutton
+            button.btn.btn-outline-warning(type='button')
+                i.fa.fa-check-square-o(aria-hidden='true')
+                |  Donation
+    .credit-edit3
+        p.credit-font2 무료 티켓이므로 가격을 적지 않습니다..!
+
+    .credit-edit4
+        p.credit-font3 유료 티켓이므로 가격과 수량을 적어주세요.
+        .ticketoption
+            .form-group
+            label.col-sm-3.control-label(for='ticket') 티켓가격
+            .col-sm-3
+                input.form-control(type='text', name='ticketprice', placeholder='ticket price')
+            
+            .form-group
+            label.col-sm-3.control-label(for='ticket') 티켓수량
+            .col-sm-3
+                input.form-control(type='text', name='ticketamount', placeholder='ticket amount')
+
+
+
 
 .container
     fieldset
@@ -95,37 +117,37 @@
         .add-edit2    
             h4 EVENT TYPE
             .event-type
-                select#event-tymenu.form-control(name='eventtype', value=eventType)
+                select#event-tymenu.form-control(name='eventType')
                     option Select the type of event
-                    option(value='Signing') Apperance or Signing 
-                    option(value='Attraction') Attraction 
-                    option(value='Trip') Camp, Trip, or Retreat 
-                    option(value='Class') Class, Training, or Workshop 
-                    option(value='Concert') Concert or Performance 
-                    option(value='Conference') Conference 
-                    option(value='Convention') Convention 
-                    option(value='Dinner') Dinner or Gala 
-                    option(value='Festival') Festival or Fair 
-                    option(value='Party') Party or Social Gathering 
-                    option(value='Game') Game or Competition 
-                    option(value='Expo') Tradeshow, Consumer Show, or Expo
+                    option Apperance or Signing 
+                    option Attraction 
+                    option Camp, Trip, or Retreat 
+                    option Class, Training, or Workshop 
+                    option Concert or Performance 
+                    option Conference 
+                    option Convention 
+                    option Dinner or Gala 
+                    option Festival or Fair 
+                    option Party or Social Gathering 
+                    option Game or Competition 
+                    option Tradeshow, Consumer Show, or Expo
 
             h4 EVENT TOPIC
             .event-topic
-                select#event-tomenu.form-control(name='eventtopic', value=eventTopic)
+                select#event-tomenu.form-control(name='eventTopic')
                     option Select a topic
-                    option(value='Boat') Auto, Boat & Air
-                    option(value='Business') Business & Professional
-                    option(value='Community') Community & Culture
-                    option(value='Family') Family & Education
-                    option(value='Fashion') Fashion & Beauty
-                    option(value='Film') Film, Media & Entertainment
-                    option(value='Food') Food & Drink
-                    option(value='Government') Government & Politics
-                    option(value='Health') Health & Wellness
-                    option(value='Hobbies') Hobbies & Special Interest
-                    option(value='Home') Home & Lifestyle
-                    option(value='Music') Music
+                    option Auto, Boat & Air
+                    option Business & Professional
+                    option Community & Culture
+                    option Family & Education
+                    option Fashion & Beauty
+                    option Film, Media & Entertainment
+                    option Food & Drink
+                    option Government & Politics
+                    option Health & Wellness
+                    option Hobbies & Special Interest
+                    option Home & Lifestyle
+                    option Music
 
         h4 REMAINING TICKETS
         .add-edit3

@@ -1,9 +1,9 @@
 .answer.card
   .numbers.like-badge
     .number
-      span.number.num-votes= question.numLikes
+      span.number.num-likes= answer.numLikes
     .button
-      a.like(href='#', data-id=answer.id)
+      a.like.answer-like-btn(href='#', data-id=answer.id)
         i.fa.fa-thumbs-up
         | 
         | Like

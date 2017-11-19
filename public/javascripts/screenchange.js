@@ -1,5 +1,20 @@
 var i=0;
 
+$(function(){
+    $('.credit-edit3').hide();
+    $('.credit-edit4').hide();
+
+    $('.buttongroup .firstbutton').click(function(){
+        $('.credit-edit2').hide();
+        $('.credit-edit3').show();
+    });
+    $('.buttongroup .secondbutton').click(function(){
+        $('.credit-edit2').hide();
+        $('.credit-edit4').show();
+    }); 
+});
+
+
 /*이미지 불러오기*/
 $(function() {
     //이미지 클릭시 업로드창 실행
@@ -33,5 +48,5 @@ $(function() {
             }
         });
     })
-})
+});
 

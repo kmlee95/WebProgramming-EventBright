@@ -13,18 +13,26 @@ var schema = new Schema({
   title: {type: String, trim: true, required: true},//이벤트제목
   content: {type: String, trim: true, required: true},//이벤트내용
 
-  groupname: {type: String, trim: true, required: true },//조직이름
-  groupexplan: {type: String, trim: true,  required: true},//조직설명
+  groupname: {type: String, trim: true},//조직이름
+  groupexplan: {type: String, trim: true},//조직설명
  
-  start_at:{type:Date, expires: 60*60*24, default:Date.now},
-  end_at:{type:Date, expires: 60*60*24, default:Date.now},//시작,종료시간
+  start_at:{type:Date, default:Date.now},
+  end_at:{type:Date, default:Date.now},//시작,종료시간
 
-  eventType:{type:[String], trim:true},//이벤트 종류
-  eventTopic:{type:[String], trim:true}//이벤트 분야
+  eventType:{
+    //value: 'event-tymenu',
+    type: String
+    
+    //default: 'Signing'
+  },//이벤트 종류
+  eventTopic:{
+    type:String
+  }//이벤트 분야
 
 
   //pay:{type:Boolean, default:0 },//무료, 유료
-  //ticket:{type:Number, default:0, require: true },//티켓가격
+  //ticketcount:{type:Number, default:0}
+  //ticketprice:{type:Number, default:0},//티켓가격
 
   //장소
   //이벤트 관련 사진

@@ -75,47 +75,6 @@ legend{
     width: 500px;
 }
 
-/*세개 버튼*/
-.eds-btn {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    position: relative;
-    height: 40px;
-    padding-top: 1px;
-    padding-left: 31px;
-    padding-right: 31px;
-    box-sizing: border-box;
-    text-align: center;
-    text-decoration: none;
-    line-height: 22px;
-    font-weight: 600;
-    letter-spacing: .2px;
-    color: #007f8c;
-    fill: #007f8c;
-    background: transparent;
-    background-clip: padding-box;
-    border: 1px solid transparent;
-    border-radius: 40px;
-    cursor: pointer;
-    -webkit-transition: all .4s cubic-bezier(.4,0,.3,1);
-    transition: all .4s cubic-bezier(.4,0,.3,1);
-    font-size:15px;
-}
-.eds-btn--neutral {
-    border-color: #eff2f5;
-    background-color: #fff;
-    color: #f6682f;
-    fill: #45494e;
-}
-.eds-btn:hover {
-    text-decoration: none;
-    background-color: #f8f8fa;
-}
-.eds-btn--neutral:focus, .eds-btn--neutral:hover {
-    border-color: #f8f8fa;
-}
-
-
 /*첫번째 메뉴*/
 label{
     font-weight: 700;
@@ -211,9 +170,6 @@ input[type=file] {
   position: relative;
   cursor: pointer;
   outline: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -222,14 +178,7 @@ input.cmn-toggle-round-flat + label{
   width: 75px;
   height: 30px;
   background-color: #dddddd;
-  -webkit-border-radius: 60px;
-  -moz-border-radius: 60px;
-  -ms-border-radius: 60px;
-  -o-border-radius: 60px;
   border-radius: 60px;
-  -webkit-transition: background 0.4s;
-  -moz-transition: background 0.4s;
-  -o-transition: background 0.4s;
   transition: background 0.4s;
 }
 
@@ -245,14 +194,8 @@ input.cmn-toggle-round-flat + label:before{
   bottom: 2px;
   right: 2px;
   background-color: #fff;
-  -webkit-border-radius: 60px;
-  -moz-border-radius: 60px;
-  -ms-border-radius: 60px;
-  -o-border-radius: 60px;
   border-radius: 60px;
-  -webkit-transition: background 0.4s;
-  -moz-transition: background 0.4s;
-  -o-transition: background 0.4s;
+
   transition: background 0.4s;
 }
 
@@ -262,14 +205,7 @@ input.cmn-toggle-round-flat + label:after{
   bottom: 4px;
   width: 22px;
   background-color: #dddddd;
-  -webkit-border-radius: 52px;
-  -moz-border-radius: 52px;
-  -ms-border-radius: 52px;
-  -o-border-radius: 52px;
   border-radius: 52px;
-  -webkit-transition: margin 0.4s, background 0.4s;
-  -moz-transition: margin 0.4s, background 0.4s;
-  -o-transition: margin 0.4s, background 0.4s;
   transition: margin 0.4s, background 0.4s;
 }
 
@@ -294,7 +230,28 @@ input.cmn-toggle-round-flat:checked + label:after{
     font-size:1.5rem;
     color: #848484
 }
-
+.buttongroup {
+    display: inline-flex;
+}
+.credit-font3{
+    font-weight:400;
+    margin-bottom:20px;
+    font-size:1.5rem;
+    color: #848484;
+    text-align: center;
+}
+.ticketoption{
+    display:flex;
+}
+.credit-edit3{
+    position: relative;
+    text-align:center;
+    margin: 0 auto;
+}
+.credit-edit4{
+    display:block;
+    margin-bottom:15px;
+}
 /*credit 내용부분-버튼*/
 .credit-edit2{
     margin-bottom:30px;

@@ -3,8 +3,8 @@ extends ../layout
 include ../includes/_paginate
 
 block content
-  h1.main-title
-    | Hello Event world!
+  h1.main-title1
+    | Create an Event
   .container
     form.form-inline.search-input-group(action='/questions', method='GET')
       i.fa.fa-search
@@ -35,9 +35,9 @@ block content
 
               .col-md-8
                 | 이벤트 기간 : 
-                a.start_at(href='')= question.start_at
+                a.start_at(href='')= moment(question.start_at).format('YYYY-MM-DD')
                 |  ~ 
-                a.end_at(href='')= question.end_at
+                a.end_at(href='')= moment(question.end_at).format('YYYY-MM-DD')
 
             .row
               .col-md-4

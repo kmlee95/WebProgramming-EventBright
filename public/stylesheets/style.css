@@ -173,6 +173,14 @@ a:hover {
   border-bottom: 1px solid #eee;
   color: #011a72; }
 
+.main-title1 {
+  font-family: 'Raleway';
+  font-size: 2.5rem;
+  margin: 1em 0 0.5em 0;
+  border-bottom: 1px solid #eee;
+  color: #011a72;
+  text-align: center; }
+
 .header > .navbar {
   background-color: #011a72 !important; }
 
@@ -257,6 +265,21 @@ a:hover {
   .show .answer .card-body {
     padding-left: 4em; }
 
+.question-like-btn, .answer-like-btn {
+  cursor: pointer; }
+  .question-like-btn .for-loading, .answer-like-btn .for-loading {
+    display: none; }
+  .question-like-btn.loading, .answer-like-btn.loading {
+    filter: opacity(30%);
+    cursor: wait; }
+    .question-like-btn.loading > span, .answer-like-btn.loading > span {
+      display: none; }
+    .question-like-btn.loading .for-loading, .answer-like-btn.loading .for-loading {
+      display: inline-block; }
+  .question-like-btn.disabled, .answer-like-btn.disabled {
+    color: #bbb;
+    cursor: default; }
+
 .sub-menu {
   font-family: "Benton Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   color: #45494E;
@@ -331,45 +354,6 @@ legend {
   color: rgba(0, 0, 0, 0.5);
   line-height: 30px;
   width: 500px; }
-
-/*세개 버튼*/
-.eds-btn {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  position: relative;
-  height: 40px;
-  padding-top: 1px;
-  padding-left: 31px;
-  padding-right: 31px;
-  box-sizing: border-box;
-  text-align: center;
-  text-decoration: none;
-  line-height: 22px;
-  font-weight: 600;
-  letter-spacing: .2px;
-  color: #007f8c;
-  fill: #007f8c;
-  background: transparent;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  border-radius: 40px;
-  cursor: pointer;
-  -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.3, 1);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.3, 1);
-  font-size: 15px; }
-
-.eds-btn--neutral {
-  border-color: #eff2f5;
-  background-color: #fff;
-  color: #f6682f;
-  fill: #45494e; }
-
-.eds-btn:hover {
-  text-decoration: none;
-  background-color: #f8f8fa; }
-
-.eds-btn--neutral:focus, .eds-btn--neutral:hover {
-  border-color: #f8f8fa; }
 
 /*첫번째 메뉴*/
 label {
@@ -461,9 +445,6 @@ input[type=file] {
   position: relative;
   cursor: pointer;
   outline: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none; }
 
 input.cmn-toggle-round-flat + label {
@@ -471,14 +452,7 @@ input.cmn-toggle-round-flat + label {
   width: 75px;
   height: 30px;
   background-color: #dddddd;
-  -webkit-border-radius: 60px;
-  -moz-border-radius: 60px;
-  -ms-border-radius: 60px;
-  -o-border-radius: 60px;
   border-radius: 60px;
-  -webkit-transition: background 0.4s;
-  -moz-transition: background 0.4s;
-  -o-transition: background 0.4s;
   transition: background 0.4s; }
 
 input.cmn-toggle-round-flat + label:before, input.cmn-toggle-round-flat + label:after {
@@ -492,14 +466,7 @@ input.cmn-toggle-round-flat + label:before {
   bottom: 2px;
   right: 2px;
   background-color: #fff;
-  -webkit-border-radius: 60px;
-  -moz-border-radius: 60px;
-  -ms-border-radius: 60px;
-  -o-border-radius: 60px;
   border-radius: 60px;
-  -webkit-transition: background 0.4s;
-  -moz-transition: background 0.4s;
-  -o-transition: background 0.4s;
   transition: background 0.4s; }
 
 input.cmn-toggle-round-flat + label:after {
@@ -508,14 +475,7 @@ input.cmn-toggle-round-flat + label:after {
   bottom: 4px;
   width: 22px;
   background-color: #dddddd;
-  -webkit-border-radius: 52px;
-  -moz-border-radius: 52px;
-  -ms-border-radius: 52px;
-  -o-border-radius: 52px;
   border-radius: 52px;
-  -webkit-transition: margin 0.4s, background 0.4s;
-  -moz-transition: margin 0.4s, background 0.4s;
-  -o-transition: margin 0.4s, background 0.4s;
   transition: margin 0.4s, background 0.4s; }
 
 input.cmn-toggle-round-flat:checked + label {
@@ -536,6 +496,28 @@ input.cmn-toggle-round-flat:checked + label:after {
   margin-bottom: 20px;
   font-size: 1.5rem;
   color: #848484; }
+
+.buttongroup {
+  display: inline-flex; }
+
+.credit-font3 {
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #848484;
+  text-align: center; }
+
+.ticketoption {
+  display: flex; }
+
+.credit-edit3 {
+  position: relative;
+  text-align: center;
+  margin: 0 auto; }
+
+.credit-edit4 {
+  display: block;
+  margin-bottom: 15px; }
 
 /*credit 내용부분-버튼*/
 .credit-edit2 {
