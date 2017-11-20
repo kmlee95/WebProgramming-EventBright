@@ -91,6 +91,9 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     eventType:req.body.eventType,
     eventTopic:req.body.eventTopic,
 
+    ticketcount:req.body.ticketcount,
+    ticketprice:req.body.ticketprice,
+
     tags: req.body.tags.split(" ").map(e => e.trim()),
   });
   await question.save();

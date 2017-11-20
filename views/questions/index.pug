@@ -45,11 +45,19 @@ block content
                 a.location(href='')=question.content
               .col-md-4
                 | 이벤트 타입 :
-                a.location(href='')=question.eventType
+                a.eventType(href='')=question.eventType
               .col-md-4
                 | 이벤트 종류 :
-                a.location(href='')=question.eventTopic
-                  
+                a.eventTopic(href='')=question.eventTopic
+
+            .row
+              .col-md-4
+                | 티켓 수량:
+                a.location(href='')=question.ticketcount
+              .col-md-4
+                | 티켓 가격:
+                a.location(href='')=question.ticketprice
+                
             include _question
 
       +paginate(questions, '/questions', {query: "???XXX&&"})

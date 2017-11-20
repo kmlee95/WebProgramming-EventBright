@@ -73,11 +73,11 @@
                     i.fa.fa-check-square-o(aria-hidden='true')
                     |  Paid Ticket
             .thirdbutton
-            button.btn.btn-outline-warning(type='button')
-                i.fa.fa-check-square-o(aria-hidden='true')
-                |  Donation
+                button.btn.btn-outline-warning(type='button')
+                    i.fa.fa-check-square-o(aria-hidden='true')
+                    |  Donation
     .credit-edit3
-        p.credit-font2 무료 티켓이므로 가격을 적지 않습니다..!
+        p.credit-font2 무료 티켓이므로 가격을 적지 않습니다.
 
     .credit-edit4
         p.credit-font3 유료 티켓이므로 가격과 수량을 적어주세요.
@@ -85,12 +85,12 @@
             .form-group
             label.col-sm-3.control-label(for='ticket') 티켓가격
             .col-sm-3
-                input.form-control(type='text', name='ticketprice', placeholder='ticket price')
+                input.form-control(type='text', name='ticketprice', placeholder='ticket price', value=ticketprice)
             
             .form-group
             label.col-sm-3.control-label(for='ticket') 티켓수량
             .col-sm-3
-                input.form-control(type='text', name='ticketamount', placeholder='ticket amount')
+                input.form-control(type='text', name='ticketcount', placeholder='ticket amount', value=ticketcount)
 
 
 

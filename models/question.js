@@ -27,12 +27,12 @@ var schema = new Schema({
   },//이벤트 종류
   eventTopic:{
     type:String
-  }//이벤트 분야
+  },//이벤트 분야
 
 
   //pay:{type:Boolean, default:0 },//무료, 유료
-  //ticketcount:{type:Number, default:0}
-  //ticketprice:{type:Number, default:0},//티켓가격
+  ticketcount:{type:Number, default:0},
+  ticketprice:{type:Number, default:0}//티켓가격
 
   //장소
   //이벤트 관련 사진
