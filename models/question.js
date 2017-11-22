@@ -19,15 +19,12 @@ var schema = new Schema({
   start_at:{type:Date, default:Date.now},
   end_at:{type:Date, default:Date.now},//시작,종료시간
 
-  eventType:{
-    //value: 'event-tymenu',
-    type: String
+  eventType:{type: String},//이벤트 종류
+  eventTopic:{type:String},//이벤트 분야
+  
+  eventDescript:{type:String},
     
-    //default: 'Signing'
-  },//이벤트 종류
-  eventTopic:{
-    type:String
-  },//이벤트 분야
+  
 
 
   //pay:{type:Boolean, default:0 },//무료, 유료

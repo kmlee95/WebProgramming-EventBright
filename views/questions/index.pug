@@ -24,7 +24,12 @@ block content
             .row
               | 제목 : 
               a.title(href=`/questions/${question.id}`)= question.title
-              
+
+            .row
+              .col-md-4
+                | 이벤트 설명 :
+                a.descript(href='')=question.eventDescript  
+
             .row
               .col-md-4
                 | 주최 조직 : 
@@ -57,7 +62,9 @@ block content
               .col-md-4
                 | 티켓 가격:
                 a.location(href='')=question.ticketprice
-                
+
+            
+
             include _question
 
       +paginate(questions, '/questions', {query: "???XXX&&"})

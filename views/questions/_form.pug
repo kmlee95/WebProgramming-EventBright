@@ -46,7 +46,7 @@
           .form-group
               label.col-sm-3.control-label(for='card-holder-name') Event Description
               .col-sm-9
-                  textarea(name='editor1')
+                  textarea(name='editor1')=question.eventDescript
                   script.
                       CKEDITOR.replace( 'editor1' );
 
@@ -119,18 +119,19 @@
             .event-type
                 select#event-tymenu.form-control(name='eventType')
                     option Select the type of event
-                    option Apperance or Signing 
-                    option Attraction 
-                    option Camp, Trip, or Retreat 
-                    option Class, Training, or Workshop 
-                    option Concert or Performance 
-                    option Conference 
-                    option Convention 
-                    option Dinner or Gala 
-                    option Festival or Fair 
-                    option Party or Social Gathering 
-                    option Game or Competition 
-                    option Tradeshow, Consumer Show, or Expo
+                    option(value='Signing') Apperance or Signing 
+                    option(value='Attraction') Attraction 
+                    option(value='Trip') Camp, Trip, or Retreat 
+                    option(value='Class') Class, Training, or Workshop 
+                    option(value='Concert') Concert or Performance 
+                    option(value='Conference') Conference 
+                    option(value='Convention') Convention 
+                    option(value='Dinner') Dinner or Gala 
+                    option(value='Festival') Festival or Fair 
+                    option(value='Party') Party or Social Gathering 
+                    option(value='Game') Game or Competition 
+                    option(value='Expo') Tradeshow, Consumer Show, or Expo
+
 
             h4 EVENT TOPIC
             .event-topic
