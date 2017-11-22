@@ -24,7 +24,7 @@ var schema = new Schema({
   
   eventDescript:{type:String},
     
-  
+  img:{type:String},
 
 
   //pay:{type:Boolean, default:0 },//무료, 유료

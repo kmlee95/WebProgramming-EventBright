@@ -49,7 +49,11 @@
                   textarea(name='editor1')=question.eventDescript
                   script.
                       CKEDITOR.replace( 'editor1' );
-
+                      
+        .formgroup4
+            .form-group
+                label(for='img') Image
+                input.form-control(type="file",name="img")
 .container
     fieldset
     legend 2.Credit Ticket
@@ -90,9 +94,10 @@
             .form-group
             label.col-sm-3.control-label(for='ticket') 티켓수량
             .col-sm-3
-                input.form-control(type='text', name='ticketcount', placeholder='ticket amount', value=ticketcount)
+                iput.form-control(type='text', name='ticketcount', placeholder='ticket amount', value=ticketcount)
 
-
+    
+        
 
 
 .container

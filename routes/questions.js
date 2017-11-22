@@ -3,7 +3,28 @@ const Question = require('../models/question');
 const Answer = require('../models/answer'); 
 const catchErrors = require('../lib/async-error');
 
+const multer = require('multer');
+const fs = require('fs-extra');
+const path = require('path');
+
 const router = express.Router();
+
+/*이미지관련*/
+const mimetypes={
+  "image/jpeg":"jpg",
+  "image/gif":"gif",
+  "image/png":"png"
+};
+const upload= multer({
+  dest :'tmp',
+  fileFilter:(req, file, cb)=>{
+    var ext = mimetypes[file.mimetype];
+    if(!ext){
+      return cb(new Error('Only image files are allowed!'), false);
+    }
+    cb(null, true);
+  }
+})
 
 // 동일한 코드가 users.js에도 있습니다. 이것은 나중에 수정합시다.
 function needAuth(req, res, next) {
@@ -76,7 +97,7 @@ router.delete('/:id', needAuth, catchErrors(async (req, res, next) => {
   res.redirect('/questions');
 }));
 
-router.post('/', needAuth, catchErrors(async (req, res, next) => {
+router.post('/', needAuth, upload.single('img'), catchErrors(async (req, res, next) => {
   const user = req.user;
   var question = new Question({
     author: user._id,
@@ -98,6 +119,15 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     
     tags: req.body.tags.split(" ").map(e => e.trim()),
   });
+
+  if(req.file){
+    const dest = path.join(__dirname, '../public/images/uploads/');
+    console.log("File ->", req.file);
+    const filename =req.file.filename + "." + mimetypes[req.file.mimetype];
+    await fs.move(req.file.path, dest + filename);
+    question.img="/images/uploads/" + filename;
+  }
+
   await question.save();
   req.flash('success', 'Successfully posted');
   res.redirect('/questions');
