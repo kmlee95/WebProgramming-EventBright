@@ -9,6 +9,7 @@
       #[span.number.num-likes= question.numLikes] likes,
       #[span.number.num-answers= question.numAnswers] answers,
       #[span.number.num-reads= question.numReads] reads
+      #[span.number.num-participate= question.numParticipate] Participate
   .col-sm
     .author
       | asked on #{moment(question.createdAt).format('YYYY-MM-DD')}

@@ -52,8 +52,17 @@
                       
         .formgroup4
             .form-group
-                label(for='img') Image
-                input.form-control(type="file",name="img")
+                label.col-sm-3.control-label(for='img') Image
+                .col-sm-9
+                    .row
+                        .col-xs-3
+                            input.form-control(type="file",name="img")
+        .form-group
+            label.col-sm-3.control-label(for='participate') 최대참여인원
+            .col-sm-9
+                .row
+                    .col-xs-3
+                        input#card-holder-name.form-control(type='number', name='participate', placeholder='participate number', value=question.participate)
 .container
     fieldset
     legend 2.Credit Ticket
@@ -94,7 +103,7 @@
             .form-group
             label.col-sm-3.control-label(for='ticket') 티켓수량
             .col-sm-3
-                iput.form-control(type='text', name='ticketcount', placeholder='ticket amount', value=ticketcount)
+                input.form-control(type='text', name='ticketcount', placeholder='ticket amount', value=ticketcount)
 
     
         

@@ -26,6 +26,13 @@ block content
               a.title(href=`/questions/${question.id}`)= question.title
 
             .row
+              .col-md-3
+                | 이벤트 사진 :
+                .question.show
+                  if question.img
+                    img.img-fluid(src=question.img)
+                  else
+                    | 사진없음.
               .col-md-4
                 | 이벤트 설명 :
                 a.descript(href='')=question.eventDescript  
@@ -58,10 +65,13 @@ block content
             .row
               .col-md-4
                 | 티켓 수량:
-                a.location(href='')=question.ticketcount
+                a.ticketcount(href='')=question.ticketcount
               .col-md-4
                 | 티켓 가격:
-                a.location(href='')=question.ticketprice
+                a.ticketprice(href='')=question.ticketprice
+              .col-md-4
+                | 최대참여인원:
+                a.participate(href='')=question.participate
 
             
 

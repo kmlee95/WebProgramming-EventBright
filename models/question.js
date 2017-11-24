@@ -22,12 +22,13 @@ var schema = new Schema({
   eventType:{type: String},//이벤트 종류
   eventTopic:{type:String},//이벤트 분야
   
-  eventDescript:{type:String},
+  eventDescript:{type:String},//이벤트설명
     
-  img:{type:String},
+  img:{type:String}, //이벤트 이미지
+  participate:{type:Number, default:100}, //참여인원
+  numParticipate:{type:Number, default:0}, // 현재 참여자수
 
-
-  //pay:{type:Boolean, default:0 },//무료, 유료
+  
   ticketcount:{type:Number, default:0},
   ticketprice:{type:Number, default:0}//티켓가격
 

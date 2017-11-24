@@ -2,6 +2,7 @@ const express = require('express');
 const Question = require('../models/question');
 const Answer = require('../models/answer'); 
 const catchErrors = require('../lib/async-error');
+const Eventjoin = require('../models/eventjoin');
 
 const multer = require('multer');
 const fs = require('fs-extra');
@@ -116,7 +117,7 @@ router.post('/', needAuth, upload.single('img'), catchErrors(async (req, res, ne
     ticketprice:req.body.ticketprice,
 
     eventDescript:req.body.eventDescript,
-    
+    participate:req.body.participate,
     tags: req.body.tags.split(" ").map(e => e.trim()),
   });
 
@@ -155,6 +156,21 @@ router.post('/:id/answers', needAuth, catchErrors(async (req, res, next) => {
   res.redirect(`/questions/${req.params.id}`);
 }));
 
-
+router.post('/:id/eventjoin', needAuth, catchErrors(async (req, res, next) => {
+  const user = req.user;
+  const question = await Question.findById(req.params.id);
+  var eventjoin = new Eventjoin({
+    author:user._id,
+  });
+  await eventjoin.save();
+  if(question.participate>question.numParticipate){
+    question.numParticipate++;
+    req.flash('success', '참여 신청 완료');
+  }else{
+    req.flash('danger', '인원 초과');
+  }
+  await question.save();
+  res.redirect('back');
+}));
 
 module.exports = router;

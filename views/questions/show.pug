@@ -7,21 +7,26 @@ block content
     .question.show
       if question.img
         img.img-fluid(src=question.img)
-        
-      .content= question.content
-      include _question
 
-      .buttons
-        if currentUser
-          button.btn.btn-primary.question-like-btn(data-id=question.id) 
-            span.for-loading #[i.fa.fa-spin.fa-refresh] Loading
-            span #[i.fa.fa-thumbs-up] Like
-          if question.author && question.author.id == currentUser.id
-            | 
-            a.btn.btn-outline-secondary(href=`/questions/${question.id}/edit`) Edit
-            | 
-            a.btn.btn-outline-danger.need-confirm-btn(href=`/questions/${question.id}?_method=delete`) Delete
-      
+    .content= question.content
+    include _question
+
+    .buttons
+      if currentUser
+        button.btn.btn-primary.question-like-btn(data-id=question.id) 
+          span.for-loading #[i.fa.fa-spin.fa-refresh] Loading
+          span #[i.fa.fa-thumbs-up] Like
+       
+        if question.author && question.author.id == currentUser.id
+          | 
+          a.btn.btn-outline-secondary(href=`/questions/${question.id}/edit`) Edit
+          | 
+          a.btn.btn-outline-danger.need-confirm-btn(href=`/questions/${question.id}?_method=delete`) Delete
+        |
+        |
+        a.btn.btn-outline-info(href=`/questions/${question.id}/eventjoin?_method=post` type='participate') Participate 
+          
+          
     if question.numAnswers > 0
       hr
       h3 #{question.numAnswers} Answer(s)
