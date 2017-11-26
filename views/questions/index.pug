@@ -9,73 +9,83 @@ block content
     form.form-inline.search-input-group(action='/questions', method='GET')
       i.fa.fa-search
       input.form-control.mr-sm-2(type='text', name='term', placeholder='Search', aria-label='Search', value=term)
-
+  
     h1.main-title 
       | Event List
       if questions.total > 0
         .small Total #{questions.total} event(s)
-
     if questions.total <= 0 
       .alert.alert-info No questions available yet
     else
-      .questions
-        each question in questions.docs
-          .question
-            .row
-              | 제목 : 
-              a.title(href=`/questions/${question.id}`)= question.title
+      .eventbox
+        .questions
+          each question in questions.docs
+            .question
+              .eventname
+                i.fa.fa-check(aria-hidden='true')
+                a.title(href=`/questions/${question.id}`)= question.title
+              .eventcontent
+                .row
+                  .col-md-3
+                    |
+                    .showimg
+                      if question.img
+                        img.img-fluid(src=question.img)
+                      else
+                        | 사진없음
+                  .col-md
+                    | 이벤트 설명 :
+                    |
+                    a.descript(href='')=question.eventDescript  
 
-            .row
-              .col-md-3
-                | 이벤트 사진 :
-                .question.show
-                  if question.img
-                    img.img-fluid(src=question.img)
-                  else
-                    | 사진없음.
-              .col-md-4
-                | 이벤트 설명 :
-                a.descript(href='')=question.eventDescript  
+                .row
+                  .col-md-4
+                    | 주최 조직 : 
+                    |
+                    a.groupname(href='')= question.groupname
+                  .col-md-4
+                    | 조직 설명 :
+                    |
+                    a.groupexplan(href='')= question.groupexplan
 
-            .row
-              .col-md-4
-                | 주최 조직 : 
-                a.groupname(href='')= question.groupname
-                |
-                | 조직 설명 :
-                a.groupexplan(href='')= question.groupexplan
+                  .col-md-4
+                    | 이벤트 기간 :
+                    | 
+                    a.start_at(href='')= moment(question.start_at).format('YYYY-MM-DD')
+                    |  ~ 
+                    |
+                    a.end_at(href='')= moment(question.end_at).format('YYYY-MM-DD')
 
-              .col-md-8
-                | 이벤트 기간 : 
-                a.start_at(href='')= moment(question.start_at).format('YYYY-MM-DD')
-                |  ~ 
-                a.end_at(href='')= moment(question.end_at).format('YYYY-MM-DD')
+                .row
+                  .col-md-4
+                    | 위치 :
+                    |
+                    a.location(href='')=question.content
+                  .col-md-4
+                    | 이벤트 타입 :
+                    |
+                    a.eventType(href='')=question.eventType
+                  .col-md-4
+                    | 이벤트 종류 :
+                    |
+                    a.eventTopic(href='')=question.eventTopic
 
-            .row
-              .col-md-4
-                | 위치 :
-                a.location(href='')=question.content
-              .col-md-4
-                | 이벤트 타입 :
-                a.eventType(href='')=question.eventType
-              .col-md-4
-                | 이벤트 종류 :
-                a.eventTopic(href='')=question.eventTopic
+                .row
+                  .col-md-4
+                    | 티켓 수량:
+                    |
+                    a.ticketcount(href='')=question.ticketcount
+                  .col-md-4
+                    | 티켓 가격:
+                    |
+                    a.ticketprice(href='')=question.ticketprice
+                  .col-md-4
+                    | 최대참여인원:
+                    |
+                    a.participate(href='')=question.participate
 
-            .row
-              .col-md-4
-                | 티켓 수량:
-                a.ticketcount(href='')=question.ticketcount
-              .col-md-4
-                | 티켓 가격:
-                a.ticketprice(href='')=question.ticketprice
-              .col-md-4
-                | 최대참여인원:
-                a.participate(href='')=question.participate
-
-            
-
-            include _question
+          
+              include _question
 
       +paginate(questions, '/questions', {query: "???XXX&&"})
 

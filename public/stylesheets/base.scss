@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway');
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC|Cabin+Sketch");
+@import url("https://fonts.googleapis.com/earlyaccess/notosansethiopic.css");
 
 body {
   font: 1rem 'Montserrat', sans-serif;
@@ -176,24 +178,32 @@ a:hover {
 }
 
 .main-title {
-  font-family: 'Raleway';
-  font-size: 2.5rem;
-  margin: 1em 0 0.5em 0;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 3.0rem;
+  margin: 0em 0 0.5em 0;
   border-bottom: 1px solid #eee;
   color: #011a72;
 }
 .main-title1 {
-  font-family: 'Raleway';
-  font-size: 2.5rem;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 3.0rem;
+  margin: 1em 0 0.5em 0;
+  border-bottom: 1px solid #eee;
+  color: #2ECCFA;
+  text-align:center;
+}
+.main-title2 {
+  font-size: 2.0rem;
   margin: 1em 0 0.5em 0;
   border-bottom: 1px solid #eee;
   color: #011a72;
-  text-align:center;
 }
 .header > .navbar {
-  background-color: #011a72!important;
+  background-color: #AC58FA!important;
 }
-
+.navbar-dark .navbar-nav .nav-link {
+  font-weight:bold;
+}
 .search-input-group{
   margin: 1em 0;
   width: 100%;

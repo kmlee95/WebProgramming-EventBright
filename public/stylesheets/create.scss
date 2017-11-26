@@ -94,7 +94,9 @@ select.form-control:not([size]):not([multiple]) {
     max-width: 100%;
 }
 .row {
-    margin-left:0px;
+    margin-top:10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .group-label {
     margin-bottom: 20px;
@@ -158,7 +160,9 @@ input[type=file] {
 .credit-main1 h4{
     font-size:1.3rem;
 }
-
+.buttonback{
+    float:right;
+}
 /*creadit card toggle 버튼부분*/
 .cmn-toggle {
   position: absolute;

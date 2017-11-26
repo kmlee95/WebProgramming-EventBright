@@ -2,13 +2,26 @@ extends ../layout
 
 block content
   .container
-    h1.main-title= question.title
+    h1.main-title2= question.title
 
     .question.show
-      if question.img
-        img.img-fluid(src=question.img)
+      .contentsub
+        if question.img
+          img.img-fluid(src=question.img)
+        .contentsub1
+          .col-md
+            i.fa.fa-spinner.fa-spin.fa-lg.fa-lg
+            |이벤트 내용
+            |
+            .content= question.eventDescript
+          .col-md
+            | 이벤트 기간 :
+            | 
+            a.start_at(href='')= moment(question.start_at).format('YYYY-MM-DD')
+            |  ~ 
+            |
+            a.end_at(href='')= moment(question.end_at).format('YYYY-MM-DD')
 
-      .content= question.content
       include _question
 
       .buttons
@@ -29,7 +42,7 @@ block content
           
     if question.numAnswers > 0
       hr
-      h3 #{question.numAnswers} Answer(s)
+      h3 #{question.numAnswers} REVIEW
       .answers.show
         each answer in answers
           include _answer
@@ -37,7 +50,7 @@ block content
     if currentUser
       form(action=`/questions/${question.id}/answers`, method='POST')
         .form-group
-          label(for='answer') Your Answer
+          label(for='answer') 이벤트 후기를 남겨주세요
           textarea.form-control(name="content", rows="5")
         button.btn.btn-primary(type="submit") Post Your Answer
 

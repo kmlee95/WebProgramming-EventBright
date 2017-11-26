@@ -88,24 +88,33 @@
             .thirdbutton
                 button.btn.btn-outline-warning(type='button')
                     i.fa.fa-check-square-o(aria-hidden='true')
-                    |  Donation
+                    |  Donation(구현x)
+        
     .credit-edit3
+        .buttonback
+            button.btn.btn-outline-info(type='button')
+                i.fa.fa-arrow-left(aria-hidden='true')
+                |  Back
         p.credit-font2 무료 티켓이므로 가격을 적지 않습니다.
-
+        
     .credit-edit4
+        .buttonback
+            button.btn.btn-outline-info(type='button')
+                i.fa.fa-arrow-left(aria-hidden='true')
+                |  Back
         p.credit-font3 유료 티켓이므로 가격과 수량을 적어주세요.
         .ticketoption
             .form-group
             label.col-sm-3.control-label(for='ticket') 티켓가격
             .col-sm-3
-                input.form-control(type='text', name='ticketprice', placeholder='ticket price', value=ticketprice)
+                input.form-control(type='number', name='ticketprice', placeholder='ticket price', value=ticketprice)
             
             .form-group
             label.col-sm-3.control-label(for='ticket') 티켓수량
             .col-sm-3
-                input.form-control(type='text', name='ticketcount', placeholder='ticket amount', value=ticketcount)
+                input.form-control(type='number', name='ticketcount', placeholder='ticket amount', value=ticketcount)
 
-    
+            
         
 
 
@@ -119,20 +128,20 @@
             .edit1-block
                 input#addpublic(type='radio', name='public', value='1', checked='')
                 label(for='addpublic')
-                    | Public page:
+                    | Public page:(구현x)
                     span#addspan
                         |     Discoverable by anyone on Eventbrite, our distribution partners, and search engines.
             .edit2-block   
                 input#addpublic2(type='radio', name='public', value='2')
                 label(for='addpublic2')
-                    | Private page:
+                    | Private page:(구현x)
                     span#addspan2
                         |     Accessible only by people you specify.
         .add-edit2    
             h4 EVENT TYPE
             .event-type
                 select#event-tymenu.form-control(name='eventType')
-                    option Select the type of event
+                    option Select the type of event(이벤트 종류)
                     option(value='Apperance or Signing') Apperance or Signing 
                     option(value='Attraction') Attraction 
                     option(value='Camp, Trip, or Retreat') Camp, Trip, or Retreat 
@@ -150,7 +159,7 @@
             h4 EVENT TOPIC
             .event-topic
                 select#event-tomenu.form-control(name='eventTopic')
-                    option Select a topic
+                    option Select a topic(이벤트 분야)
                     option Auto, Boat & Air
                     option Business & Professional
                     option Community & Culture
@@ -169,4 +178,4 @@
             input#addremain(type='checkbox', name='remain', value='4')
             label(for='addremain')
                 span#addrespan     
-                    |      Show the number of remaining tickets on your event listing
+                    |      (구현x)Show the number of remaining tickets on your event listing
