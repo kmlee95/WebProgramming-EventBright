@@ -116,7 +116,7 @@ router.post('/', needAuth, upload.single('img'), catchErrors(async (req, res, ne
     ticketcount:req.body.ticketcount,
     ticketprice:req.body.ticketprice,
 
-    eventDescript:req.body.eventDescript,
+    //eventDescript:req.body.eventDescript,
     participate:req.body.participate,
     tags: req.body.tags.split(" ").map(e => e.trim()),
   });
@@ -160,12 +160,12 @@ router.post('/:id/eventjoin', needAuth, catchErrors(async (req, res, next) => {
   const user = req.user;
   const question = await Question.findById(req.params.id);
   var eventjoin = new Eventjoin({
-    author:user._id,
+    author:user._id
   });
   await eventjoin.save();
   if(question.participate>question.numParticipate){
-    question.numParticipate++;
     req.flash('success', '참여 신청 완료');
+    question.numParticipate++;
   }else{
     req.flash('danger', '인원 초과');
   }

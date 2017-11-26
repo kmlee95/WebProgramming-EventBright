@@ -11,7 +11,7 @@ var schema = new Schema({
   numReads: {type: Number, default: 0},
 
   title: {type: String, trim: true, required: true},//이벤트제목
-  content: {type: String, trim: true, required: true},//이벤트내용
+  content: {type: String, trim: true, required: true},//이벤트위치
 
   groupname: {type: String, trim: true},//조직이름
   groupexplan: {type: String, trim: true},//조직설명
@@ -22,7 +22,7 @@ var schema = new Schema({
   eventType:{type: String},//이벤트 종류
   eventTopic:{type:String},//이벤트 분야
   
-  eventDescript:{type:String},//이벤트설명
+  eventDescript:{type:String, trim:true, default:0},//이벤트설명
     
   img:{type:String}, //이벤트 이미지
   participate:{type:Number, default:100}, //참여인원

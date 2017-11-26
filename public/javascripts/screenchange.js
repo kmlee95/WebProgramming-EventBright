@@ -1,5 +1,3 @@
-var i=0;
-
 $(function(){
     $('.credit-edit3').hide();
     $('.credit-edit4').hide();
