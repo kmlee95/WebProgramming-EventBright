@@ -29,11 +29,9 @@ var schema = new Schema({
   numParticipate:{type:Number, default:0}, // 현재 참여자수
 
   
-  ticketcount:{type:Number, default:0},
+  ticketcount:{type:Number, default:0},//티켓수량
   ticketprice:{type:Number, default:0}//티켓가격
 
-  //장소
-  //이벤트 관련 사진
   //설문
   
 }, {

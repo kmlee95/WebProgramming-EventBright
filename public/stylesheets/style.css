@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
 @import url("https://fonts.googleapis.com/css?family=Amatic+SC|Cabin+Sketch");
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
 @import url("https://fonts.googleapis.com/earlyaccess/notosansethiopic.css");
 body {
   font: 1rem 'Montserrat', sans-serif;
@@ -18,6 +19,9 @@ input {
 
 a:hover {
   text-decoration: none; }
+
+.img-fluid {
+  width: 100%; }
 
 /*.jumbotron {
   margin-top: -1em;
@@ -99,6 +103,64 @@ a:hover {
 .line-position .btn-sm {
   padding: .65rem 2.3rem;
   font-weight: bold; }
+
+.card a {
+  color: black; }
+
+.card-text .ctitle {
+  font-size: 1.3em;
+  color: #D358F7;
+  padding-bottom: 5px; }
+
+.card-text .ccontent {
+  font-size: 0.9em; }
+
+.card-text .ctype {
+  font-size: 0.9em; }
+
+.card-text .ctopic {
+  font-size: 0.9em; }
+
+.card-text .ctime {
+  font-size: 0.9em; }
+
+.card-text {
+  display: flex;
+  flex-direction: column; }
+
+.card-text p {
+  font-size: 1.2rem;
+  font-family: 'Indie Flower', cursive; }
+
+.cardlocation {
+  display: inline-flex; }
+
+.cardtopic {
+  display: inline-flex; }
+
+.cardtype {
+  display: inline-flex; }
+
+.carddate {
+  display: inline-flex; }
+
+.tagdiv .indextag {
+  float: left;
+  color: #848484;
+  font-weight: bold; }
+
+.card-footer {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem; }
+
+.icondiv .tagicon {
+  height: 100%;
+  font-size: 1.0rem;
+  color: #848484;
+  float: right;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 1px solid #848484; }
 
 /*카드아래 버튼*/
 .btn-center {
@@ -303,8 +365,10 @@ a:hover {
 .eventcontent {
   font-size: 0.8em; }
 
+.eventbox .questions .question {
+  border: 1px solid #81bbf2; }
+
 .eventbox {
-  border: 1px solid #81bbf2;
   margin: 0 auto;
   width: 80%; }
 

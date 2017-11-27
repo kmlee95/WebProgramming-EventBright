@@ -1,5 +1,4 @@
 extends layout
-
 block hero-unit
   .main-pic
     #carouselExampleSlidesOnly.carousel.slide(data-ride='carousel')
@@ -39,111 +38,53 @@ block content
           | 
           i.fa.fa-spinner(aria-hidden='true')
           
-    br
-
-    .card-deck
-      .card
-        .card-body
-          img(src='', alt='card1')
-        div
-          p.first-p SAT. OCT 7 10:00 PM
-          p.second-p KRAVE SATURDAYS - FREE ENTRY
-          br
-          p.third-p TRUTH NIGHTCLUB (Formerly Krave),Atlanta
-        .card-footer
-          a.card-text(href='..') #Art
-          a.card-text(href='..') #Performance
-          .card-post1
-            a.link-post1(href='..')
-              i.fa.fa-share-square-o(aria-hidden='true')
-            a.link-post1(href='..')
-              i.fa.fa-bookmark-o(aria-hidden='true')
-      .card
-        .card-body
-          img(src='', alt='card2')
-        div
-          p.first-p FRI, OCT 20 7:00 PM
-          p.second-p Grease, School Edition - October 20, 2017
-          br
-          p.third-p Seoul Foreign School| Yeonhui-radius
-        .card-footer
-          a.card-text(href='..') #Hobbys
-          a.card-text(href='..') #Party~
-          .card-post1
-            a.link-post1(href='..')
-              i.fa.fa-share-square-o(aria-hidden='true')
-            a.link-post1(href='..')
-              i.fa.fa-bookmark-o(aria-hidden='true')
-      .card
-        .card-body
-          img(src='', alt='card3')
-        div
-          p.first-p THU. NOV 9 9:00 PM
-          p.second-p MAR+IN GARRIX WORLDCLUBDOME
-          br
-          p.third-p Seoul, Seoul
-        .card-footer
-          a.card-text(href='..') #WorldClub
-          a.card-text(href='..') #Sales
-          .card-post1
-            a.link-post1(href='..')
-              i.fa.fa-share-square-o(aria-hidden='true')
-            a.link-post1(href='..')
-              i.fa.fa-bookmark-o(aria-hidden='true')
-
-    br
-    .card-deck
-      .card
-        .card-body
-          img(src='', alt='card1')
-        div
-          p.first-p SAT. OCT 7 10:00 PM
-          p.second-p KRAVE SATURDAYS - FREE ENTRY
-          br
-          p.third-p TRUTH NIGHTCLUB (Formerly Krave),Atlanta
-        .card-footer
-          a.card-text(href='..') #Art
-          a.card-text(href='..') #Performance
-          .card-post1
-            a.link-post1(href='..')
-              i.fa.fa-share-square-o(aria-hidden='true')
-            a.link-post1(href='..')
-              i.fa.fa-bookmark-o(aria-hidden='true')
-      .card
-        .card-body
-          img(src='', alt='card2')
-        div
-          p.first-p FRI, OCT 20 7:00 PM
-          p.second-p Grease, School Edition - October 20, 2017
-          br
-          p.third-p Seoul Foreign School| Yeonhui-radius
-        .card-footer
-          a.card-text(href='..') #Hobbys
-          a.card-text(href='..') #Party~
-          .card-post1
-            a.link-post1(href='..')
-              i.fa.fa-share-square-o(aria-hidden='true')
-            a.link-post1(href='..')
-              i.fa.fa-bookmark-o(aria-hidden='true')
-      .card
-        .card-body
-          img(src='', alt='card3')
-        div
-          p.first-p THU. NOV 9 9:00 PM
-          p.second-p MAR+IN GARRIX WORLDCLUBDOME
-          br
-          p.third-p Seoul, Seoul
-        .card-footer
-          a.card-text(href='..') #WorldClub
-          a.card-text(href='..') #Sales
-          .card-post1
-            a.link-post1(href='..')
-              i.fa.fa-share-square-o(aria-hidden='true')
-            a.link-post1(href='..')
-              i.fa.fa-bookmark-o(aria-hidden='true')
-
+      .card-box
+        if questions.total <= 0 
+          .alert.alert-info No Event available yet
+        else
+          .row.questions
+            each question in questions.docs
+              .col-md-4.col-sm-6
+                .question
+                  .card
+                    a(href=`/questions/${question.id}`)
+                      if question.img
+                        img.img-fluid(src=question.img)
+                      else
+                        | 사진없음        
+                      .card-body
+                        .card-text
+                          .ctitle= question.title
+                          .cardlocation
+                            p Location :
+                            |&nbsp;
+                            .ccontent= question.content
+                          .cardtype
+                            p Type :
+                            |&nbsp;
+                            .ctype=question.eventType
+                          .cardtopic
+                            p Topic :
+                            |&nbsp;
+                            .ctopic=question.eventTopic
+                          .carddate
+                            i.fa.fa-calendar(aria-hidden='true') Date :
+                            |&nbsp;
+                            .ctime= moment(question.start_at).format('YYYY-MM-DD')+" ~ " + moment(question.end_at).format('YYYY-MM-DD')
+                    .card-footer
+                      each tag in question.tags
+                        .tagdiv
+                          a.indextag.tag(href='#')= tag
+                          |
+                        .icondiv
+                          a.tagicon(href='#')
+                            i.fa.fa-bookmark-o(aria-hidden='true')         
+                          a.tagicon(href='#')
+                            i.fa.fa-upload(aria-hidden='true')    
+                      
     .btn-center
-      button.btn.btn-outline-primary(type='button') See More
+      a(href='/questions')
+        button.btn.btn-outline-primary(type='button') See More
 
     .test-position
       p.text-ctg Browse by Top Categories
