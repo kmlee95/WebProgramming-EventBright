@@ -39,8 +39,25 @@ block content
           |
           |
           a.btn.btn-outline-info(href=`/questions/${question.id}/eventjoin?_method=post` type='participate') Participate 
+    
+    if (currentUser.email == 'kmlee95@naver.com')     
+      .row
+        .participate_box.col-9
+          p 참여자 명단
+          table.table.table-hover
+            thead
+              tr
+                th Name
+                th Email
+            tbody
+              each eventjoin in eventjoins
+                if eventjoin.author
+                  tr
+                    td
+                      a(href=`/users/${eventjoin.author.id}`)= eventjoin.author.name
+                    td= eventjoin.author.email
           
-          
+
     if question.numAnswers > 0
       hr
       h3 #{question.numAnswers} REVIEW

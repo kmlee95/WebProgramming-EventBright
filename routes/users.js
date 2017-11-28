@@ -37,7 +37,6 @@ function validateForm(form, options) {
   if (form.password.length < 6) {
     return 'Password must be at least 6 characters.';
   }
-
   return null;
 }
 

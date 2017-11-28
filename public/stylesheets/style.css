@@ -21,7 +21,7 @@ a:hover {
   text-decoration: none; }
 
 .img-fluid {
-  width: 100%; }
+  max-width: 100%; }
 
 /*.jumbotron {
   margin-top: -1em;
@@ -386,6 +386,9 @@ a:hover {
 .contentsub1 {
   display: flex;
   flex-direction: column; }
+
+.participate_box {
+  border: 1px solid red; }
 
 .sub-menu {
   font-family: "Benton Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;

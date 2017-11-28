@@ -27,6 +27,43 @@ const upload= multer({
   }
 })
 
+
+function validateForm(form, options) {
+  var title = form.title || "";
+  var content = form.content || "";
+  var groupname = form.groupname || "";
+  var groupexplan = form.groupexplan || "";
+  var start_at = form.start_at || "";
+  var end_at = form.end_at || "";
+  var participate = form.participate || "";
+  var eventType = form.eventType || "";
+  var eventTopic = form.eventTopic || "";
+
+  if (!title) {
+    return '제목을 입력해주세요!';
+  }
+  if (!content) {
+    return '이벤트 내용을 입력해주세요!';
+  }
+  if (!groupname) {
+    return '조직이름을 입력해주세요!';
+  }
+  if (!groupexplan) {
+    return '조직설명을 입력해주세요!';
+  }
+  
+  if (!start_at) {
+    return '시작 날짜를 입력해주세요!';
+  }
+  if (!end_at) {
+    return '종료 날짜를 입력해주세요!';
+  }
+  if (!participate) {
+    return '최대인원을 입력해주세요!';
+  }
+  return null;
+}
+
 // 동일한 코드가 users.js에도 있습니다. 이것은 나중에 수정합시다.
 function needAuth(req, res, next) {
   if (req.isAuthenticated()) {
@@ -70,10 +107,11 @@ router.get('/:id/edit', needAuth, catchErrors(async (req, res, next) => {
 router.get('/:id', catchErrors(async (req, res, next) => {
   const question = await Question.findById(req.params.id).populate('author');
   const answers = await Answer.find({question: question.id}).populate('author');
+  const eventjoins=await Eventjoin.find({question: question.id}).populate('author');
   question.numReads++;    // TODO: 동일한 사람이 본 경우에 Read가 증가하지 않도록???
 
   await question.save();
-  res.render('questions/show', {question: question, answers: answers});
+  res.render('questions/show', {question: question, answers: answers, eventjoins: eventjoins}); // user등록과 똑같이..
 }));
 
 router.put('/:id', catchErrors(async (req, res, next) => {
@@ -100,6 +138,11 @@ router.delete('/:id', needAuth, catchErrors(async (req, res, next) => {
 
 router.post('/', needAuth, upload.single('img'), catchErrors(async (req, res, next) => {
   const user = req.user;
+  const err = validateForm(req.body);
+    if (err) {
+    req.flash('danger', err);
+    return res.redirect('back');
+  }
   var question = new Question({
     author: user._id,
     title: req.body.title,
@@ -159,15 +202,23 @@ router.post('/:id/answers', needAuth, catchErrors(async (req, res, next) => {
 router.post('/:id/eventjoin', needAuth, catchErrors(async (req, res, next) => {
   const user = req.user;
   const question = await Question.findById(req.params.id);
-  var eventjoin = new Eventjoin({
-    author:user._id
-  });
-  await eventjoin.save();
-  if(question.participate>question.numParticipate){
-    req.flash('success', '참여 신청 완료');
-    question.numParticipate++;
+  var findjoin = await Eventjoin.findOne({author: req.user._id, question: question._id});
+
+  if(question.participate > question.numParticipate){
+    if(findjoin){
+      req.flash('danger', '이미 신청된 상태입니다.');
+    }else{
+      var eventjoin = new Eventjoin({
+        author:user._id,
+        question: question._id
+      });
+      await eventjoin.save();
+
+      question.numParticipate++;
+      req.flash('success', '참가신청 되었습니다.');
+    }
   }else{
-    req.flash('danger', '인원 초과');
+    req.flash('danger', '인원 초과입니다.');
   }
   await question.save();
   res.redirect('back');
