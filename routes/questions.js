@@ -104,7 +104,7 @@ router.get('/:id/edit', needAuth, catchErrors(async (req, res, next) => {
   res.render('questions/edit', {question: question});
 }));
 
-router.get('/:id', catchErrors(async (req, res, next) => {
+router.get('/:id', needAuth,catchErrors(async (req, res, next) => {
   const question = await Question.findById(req.params.id).populate('author');
   const answers = await Answer.find({question: question.id}).populate('author');
   const eventjoins=await Eventjoin.find({question: question.id}).populate('author');
@@ -114,7 +114,7 @@ router.get('/:id', catchErrors(async (req, res, next) => {
   res.render('questions/show', {question: question, answers: answers, eventjoins: eventjoins}); // user등록과 똑같이..
 }));
 
-router.put('/:id', catchErrors(async (req, res, next) => {
+router.put('/:id', needAuth,catchErrors(async (req, res, next) => {
   const question = await Question.findById(req.params.id);
 
   if (!question) {
@@ -124,6 +124,20 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   question.title = req.body.title;
   question.content = req.body.content;
   question.tags = req.body.tags.split(" ").map(e => e.trim());
+
+  question.groupname = req.body.groupname;
+  question.groupexplan = req.body.groupexplan;
+  question.start_at = req.body.start_at;
+  question.end_at = req.body.end_at;
+  
+  question.eventType = req.body.eventType;
+  question.eventTopic = req.body.eventTopic;
+
+  question.ticketcount = req.body.ticketcount;
+  question.ticketprice = req.body.ticketprice;
+
+  question.eventDescript = req.body.eventDescript;
+  question.participate = req.body.participate;
 
   await question.save();
   req.flash('success', 'Successfully updated');
