@@ -43,12 +43,20 @@
 
 
         .formgroup3
-          .form-group
-              label.col-sm-3.control-label(for='card-holder-name') Event Description
-              .col-sm-9
-                  textarea(id='eventDescript' name='editor1')
-                  script.
-                      CKEDITOR.replace( 'editor1' );
+            .form-group
+                label.col-sm-3.control-label(for='card-holder-name') Event Description
+                .col-sm-9
+                    textarea#editor(name='eventDescript') This is some sample content.
+                    script.
+                        ClassicEditor
+                        .create( document.querySelector( '#editor' ) )
+                        .then( editor => {
+                        console.log( editor );
+                        } )
+                        .catch( error => {
+                        console.error( error );
+                        } );
+        
 
         .formgroup4
             .form-group

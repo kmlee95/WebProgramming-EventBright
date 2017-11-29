@@ -159,7 +159,7 @@ router.post('/', needAuth, upload.single('img'), catchErrors(async (req, res, ne
     ticketcount:req.body.ticketcount,
     ticketprice:req.body.ticketprice,
 
-    //eventDescript:req.body.eventDescript,
+    eventDescript:req.body.eventDescript,
     participate:req.body.participate,
     tags: req.body.tags.split(" ").map(e => e.trim()),
   });
