@@ -21,3 +21,10 @@ $(function(){
     $('.question .title').css("color", "#"+(parseInt(Math.random()*0xffffff)).toString(16));
     $('.eventname').css("color", "#"+(parseInt(Math.random()*0xffffff)).toString(16));
 });
+
+$(function(){
+    $(".favortable ").hide();
+    $(".likeEvent").click(function(){
+        $(".favortable ").toggle();
+    });
+});

@@ -24,3 +24,26 @@ block content
       a.btn.btn-outline-primary(href=`/users/${user._id}/edit`) Edit
       | 
       a.btn.btn-outline-danger.need-confirm-btn(href=`/users/${user._id}?_method=DELETE`) Delete
+     
+     
+    button.likeEvent.btn.btn-outline-warning(type='button') my LIKE event
+    
+    .favortable 
+      table.table.table-hover
+        thead
+          tr
+            th(scope='col') 제목
+            th(scope='col') 내용
+            th(scope='col') 참여자 수
+            th(scope='col') 이벤트 확인
+        tbody
+          each like_question in questions
+            tr
+              td 
+                .content=like_question.question.title
+              td 
+                .content!=like_question.question.eventDescript
+              td 
+                .content=like_question.question.numParticipate
+              td  
+                a(href=`/questions/${like_question.question._id}`) 이벤트로이동

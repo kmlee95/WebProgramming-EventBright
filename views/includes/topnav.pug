@@ -23,6 +23,8 @@
             li.nav-item
               a.nav-link(href="/users") 관리자
             li.nav-item
+              a.nav-link(href=`/users/${currentUser._id}`) #{currentUser.email}
+            li.nav-item
               a.nav-link(href='/signout') Signout
 
           else

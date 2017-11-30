@@ -2,6 +2,8 @@ const express = require('express');
 const User = require('../models/user');
 const router = express.Router();
 const catchErrors = require('../lib/async-error');
+const Question = require('../models/question');
+const Likelog = require('../models/like-log'); 
 
 function needAuth(req, res, next) {
   if (req.isAuthenticated()) {
@@ -119,7 +121,9 @@ router.put('/:id', needAuth, catchErrors(async (req, res, next) => {
 /*유저정보확인 myprofile*/
 router.get('/:id', catchErrors(async (req, res, next) => {
   const user = await User.findById(req.params.id);
-  res.render('users/show', {user: user});
+  const questions = await Likelog.find({author:user._id }).populate('question');
+
+  res.render('users/show', {user: user, questions: questions});
 }));
 
 
