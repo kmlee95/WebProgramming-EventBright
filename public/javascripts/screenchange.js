@@ -27,4 +27,9 @@ $(function(){
     $(".likeEvent").click(function(){
         $(".favortable ").toggle();
     });
+
+    $(".mapcontent").hide();
+    $("#mapselect").click(function(){
+        $(".mapcontent").toggle();
+    });
 });

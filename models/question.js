@@ -13,6 +13,8 @@ var schema = new Schema({
   title: {type: String, trim: true, required: true},//이벤트제목
   content: {type: String, trim: true, required: true},//이벤트위치
   
+  locate: {type: String, required: true, trim: true},
+
   groupname: {type: String, trim: true, required: true},//조직이름
   groupexplan: {type: String, trim: true, required: true},//조직설명
   

@@ -84,7 +84,10 @@ router.get('/', catchErrors(async (req, res, next) => {
   if (term) {
     query = {$or: [
       {title: {'$regex': term, '$options': 'i'}},
-      {content: {'$regex': term, '$options': 'i'}}
+      {content: {'$regex': term, '$options': 'i'}},
+
+      {locatetitle: {'$regex': term, '$options': 'i'}},
+      {locate: {'$regex': term, '$options': 'i'}},
     ]};
   }
   const questions = await Question.paginate(query, {
@@ -123,6 +126,9 @@ router.put('/:id', needAuth,catchErrors(async (req, res, next) => {
   }
   question.title = req.body.title;
   question.content = req.body.content;
+  
+  question.locate = req.body.locate,
+  
   question.tags = req.body.tags.split(" ").map(e => e.trim());
 
   question.groupname = req.body.groupname;
@@ -162,6 +168,8 @@ router.post('/', needAuth, upload.single('img'), catchErrors(async (req, res, ne
     title: req.body.title,
     content: req.body.content,
 
+    locate: req.body.locate,
+    
     groupname:req.body.groupname,
     groupexplan:req.body.groupexplan,
     start_at:req.body.start_at,
