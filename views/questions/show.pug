@@ -44,7 +44,7 @@ block content
     
     .mapcontent
       #map(style='width:40%;height:200px;')
-     
+      script(type='text/javascript', src='//dapi.kakao.com/v2/maps/sdk.js?appkey=c1cd91294498e72ac5372ed8940f8e9b&libraries=services')
       script.
           var mapContainer = document.getElementById('map'), // 지도를 표시할 div
               mapOption = {
