@@ -85,8 +85,6 @@ router.get('/', catchErrors(async (req, res, next) => {
     query = {$or: [
       {title: {'$regex': term, '$options': 'i'}},
       {content: {'$regex': term, '$options': 'i'}},
-
-      {locatetitle: {'$regex': term, '$options': 'i'}},
       {locate: {'$regex': term, '$options': 'i'}},
     ]};
   }
@@ -180,7 +178,7 @@ router.post('/', needAuth, upload.single('img'), catchErrors(async (req, res, ne
 
     ticketcount:req.body.ticketcount,
     ticketprice:req.body.ticketprice,
-
+  
     eventDescript:req.body.eventDescript,
     participate:req.body.participate,
     tags: req.body.tags.split(" ").map(e => e.trim()),

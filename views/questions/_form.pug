@@ -172,11 +172,11 @@
         p.credit-font2 What type of ticket would you like to start with?
         .buttongroup
             .firstbutton
-                button.btn.btn-outline-warning(type='button')
+                button.btn.btn-outline-warning(id='freeticket' type='button')
                     i.fa.fa-check-square-o(aria-hidden='true')
                     |  Free Ticket
             .secondbutton
-                button.btn.btn-outline-warning(type='button')
+                button.btn.btn-outline-warning(id='paidticket' type='button')
                     i.fa.fa-check-square-o(aria-hidden='true')
                     |  Paid Ticket
             .thirdbutton
@@ -208,10 +208,7 @@
             .col-sm-3
                 input.form-control(type='number', name='ticketcount', placeholder='ticket amount', value=ticketcount)
 
-            
-        
-
-
+    
 .container
     fieldset
     legend 3.Additional Setting
@@ -239,15 +236,15 @@
                     option(value='Apperance or Signing') Apperance or Signing 
                     option(value='Attraction') Attraction 
                     option(value='Camp, Trip, or Retreat') Camp, Trip, or Retreat 
-                    option(value='Class, Training, or Workshop') Class, Training, or Workshop 
+                    option(value='Class, Training, Workshop') Class, Training, or Workshop 
                     option(value='Concert or Performance') Concert or Performance 
                     option(value='Conference') Conference 
                     option(value='Convntion') Convention 
                     option(value='Dinner or Gala') Dinner or Gala 
                     option(value='Festival or Fair') Festival or Fair 
-                    option(value='PParty or Social Gathering') Party or Social Gathering 
+                    option(value='Party or Social Gather') Party or Social Gathering 
                     option(value='Game or Competition') Game or Competition 
-                    option(value='Tradeshow, Consumer Show, or Expo') Tradeshow, Consumer Show, or Expo
+                    option(value='Tradeshow, Consumer Show') Tradeshow, Consumer Show, or Expo
 
 
             h4 EVENT TOPIC

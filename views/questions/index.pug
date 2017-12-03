@@ -17,12 +17,12 @@ block content
     if questions.total <= 0 
       .alert.alert-info No questions available yet
     else
+      button.btn.btn-outline-info(id='detailbutton' type='button') 상세정보
       .eventbox
         .questions
           each question in questions.docs
             .question
               .eventname
-                i.fa.fa-check(aria-hidden='true')
                 a.title(href=`/questions/${question.id}`)= question.title
               .eventcontent
                 .row
@@ -34,10 +34,11 @@ block content
                       else
                         | Not Photo
                   .col-md
-                    | 이벤트 설명 :
+                    | 이벤트 설명
                     |
                     a.editor(href='')!=question.eventDescript
 
+              .detailcontent
                 .row
                   .col-md-4
                     | 주최 조직 : 
@@ -72,14 +73,20 @@ block content
                     a.eventTopic(href='')=question.eventTopic
 
                 .row
-                  .col-md-4
-                    | 티켓 수량:
-                    |
-                    a.ticketcount(href='')=question.ticketcount
-                  .col-md-4
-                    | 티켓 가격:
-                    |
-                    a.ticketprice(href='')=question.ticketprice
+                  if(question.ticketprice)
+                    .col-md-4     
+                      | 티켓 수량:
+                      |
+                      a.ticketcount(href='')=question.ticketcount
+                    .col-md-4
+                      | 티켓 가격:
+                      |
+                      a.ticketprice(href='')=question.ticketprice
+                  else
+                    .col-md-4
+                      |
+                      |
+                      p 티켓 가격은 무료입니다.
                   .col-md-4
                     | 최대참여인원:
                     |

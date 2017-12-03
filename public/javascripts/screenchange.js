@@ -23,6 +23,7 @@ $(function(){
 });
 
 $(function(){
+
     $(".favortable ").hide();
     $(".likeEvent").click(function(){
         $(".favortable ").toggle();
@@ -32,4 +33,9 @@ $(function(){
     $("#mapselect").click(function(){
         $(".mapcontent").toggle();
     });
+
+    $(".detailcontent").hide();
+    $("#detailbutton").click(function(){
+        $(".detailcontent").toggle();
+    })
 });
