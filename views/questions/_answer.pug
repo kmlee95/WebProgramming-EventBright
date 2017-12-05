@@ -9,9 +9,24 @@
         | Like
 
   .card-body
-    .content= answer.content
+    .content=answer.content
+    .row
+      .col-md-2
+          | 등록자 후기 답변 :
+      .col-md-8
+        each req in reanswers
+          if answer.id == req.answer
+            .content=req.content
+
   .row.card-body
-    .col-sm
+    if currentUser.id == question.author.id
+      .col-sm
+        form(action=`/questions/${answer.id}/reanswers`, method='POST')
+          .reflex.col-sm-8
+            textarea.form-control(name="content", rows="1")
+            |
+            button.btn.btn-primary(type="submit") 후기 답변
+
     .col-sm.text-right
       .author
         | answered on #{moment(answer.createdAt).format('YYYY-MM-DD')}

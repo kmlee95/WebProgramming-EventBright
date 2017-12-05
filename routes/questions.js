@@ -1,6 +1,8 @@
 const express = require('express');
 const Question = require('../models/question');
 const Answer = require('../models/answer'); 
+const reAnswer = require('../models/reanswer')
+
 const catchErrors = require('../lib/async-error');
 const Eventjoin = require('../models/eventjoin');
 
@@ -109,10 +111,13 @@ router.get('/:id', needAuth,catchErrors(async (req, res, next) => {
   const question = await Question.findById(req.params.id).populate('author');
   const answers = await Answer.find({question: question.id}).populate('author');
   const eventjoins=await Eventjoin.find({question: question.id}).populate('author');
+  const reanswers = await reAnswer.find({answers: answers.id}).populate('author');
+  //console(reanswers);
+
   question.numReads++;    // TODO: 동일한 사람이 본 경우에 Read가 증가하지 않도록???
 
   await question.save();
-  res.render('questions/show', {question: question, answers: answers, eventjoins: eventjoins}); // user등록과 똑같이..
+  res.render('questions/show', {question: question, answers: answers, eventjoins: eventjoins, reanswers:reanswers}); // user등록과 똑같이..
 }));
 
 router.put('/:id', needAuth,catchErrors(async (req, res, next) => {
@@ -211,6 +216,7 @@ router.post('/:id/answers', needAuth, catchErrors(async (req, res, next) => {
     question: question._id,
     content: req.body.content
   });
+
   await answer.save();
   question.numAnswers++;
   await question.save();
@@ -218,6 +224,20 @@ router.post('/:id/answers', needAuth, catchErrors(async (req, res, next) => {
   req.flash('success', 'Successfully answered');
   res.redirect(`/questions/${req.params.id}`);
 }));
+
+router.post('/:id/reanswers', needAuth, catchErrors(async (req, res, next) => {//답변
+    const user=req.user;
+    const answer = await Answer.findById(req.params.id);
+    var reanswer = new reAnswer({
+      author:user._id,
+      answer:answer._id,
+      content:req.body.content
+    });
+    await reanswer.save();
+    req.flash('success', 'Successfully');
+    res.redirect('back');
+}));
+
 
 router.post('/:id/eventjoin', needAuth, catchErrors(async (req, res, next) => {
   const user = req.user;

@@ -402,6 +402,11 @@ a:hover {
   margin: 0 auto;
   margin-bottom: 1rem; }
 
+.reflex {
+  display: flex;
+  flex-direction: row;
+  float: right; }
+
 .sub-menu {
   font-family: "Benton Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   color: #45494E;
