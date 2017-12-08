@@ -386,9 +386,8 @@ a:hover {
 .contentsub {
   display: inline-flex; }
 
-.contentsub1 {
-  display: flex;
-  flex-direction: column; }
+.contentsub1 .col-md {
+  display: block; }
 
 .participate_box {
   border: 1px solid orange;

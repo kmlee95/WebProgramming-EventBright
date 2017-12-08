@@ -40,6 +40,7 @@ function validateForm(form, options) {
   var participate = form.participate || "";
   var eventType = form.eventType || "";
   var eventTopic = form.eventTopic || "";
+  var locate = form.locate || "";
 
   if (!title) {
     return '제목을 입력해주세요!';
@@ -62,6 +63,9 @@ function validateForm(form, options) {
   }
   if (!participate) {
     return '최대인원을 입력해주세요!';
+  }
+  if (!locate) {
+    return '위치를 지정하거나 입력해주세요!';
   }
   return null;
 }

@@ -14,13 +14,17 @@ block content
             i.fa.fa-spinner.fa-spin.fa-lg.fa-lg
             br
             .content!= question.eventDescript
+       
           .col-md
             | 이벤트 기간 :
             | 
+          if question.start_at
             a.start_at(href='')= moment(question.start_at).format('YYYY-MM-DD')
             |  ~ 
             |
             a.end_at(href='')= moment(question.end_at).format('YYYY-MM-DD')
+          else
+            |&nbsp;&nbsp; 이벤트 기간을 안적으셨습니다.(다시 적어주세요)
 
       include _question
 

@@ -18,8 +18,8 @@ var schema = new Schema({
   groupname: {type: String, trim: true, required: true},//조직이름
   groupexplan: {type: String, trim: true, required: true},//조직설명
   
-  start_at:{type:Date, default:Date.now, required: true},
-  end_at:{type:Date, default:Date.now, required: true},//시작,종료시간
+  start_at:{type:Date, default:Date.now},
+  end_at:{type:Date, default:Date.now},//시작,종료시간
   
   eventType:{type: String},//이벤트 종류
   eventTopic:{type:String},//이벤트 분야
