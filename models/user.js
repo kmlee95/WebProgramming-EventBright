@@ -15,11 +15,10 @@ var schema = new Schema({
 });
 
 schema.methods.generateHash = function(password) {
-  return bcrypt.hash(password, 10); // return Promise
+  return bcrypt.hash(password, 10); 
 };
-
 schema.methods.validatePassword = function(password) {
-  return bcrypt.compare(password, this.password); // return Promise
+  return bcrypt.compare(password, this.password); 
 };
 
 var User = mongoose.model('User', schema);

@@ -2,7 +2,7 @@ extends ../layout
 
 block content
   .container
-    h1.main-title Edit Question
+    h1.main-title Edit Event
     form(action=`/questions/${question.id}?_method=PUT`, method="POST")
       //input(type="hidden", name="_method", value="PUT")
       include _form
