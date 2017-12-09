@@ -130,7 +130,7 @@ router.put('/:id', needAuth,catchErrors(async (req, res, next) => {
   const question = await Question.findById(req.params.id);
 
   if (!question) {
-    req.flash('danger', 'Not exist question');
+    req.flash('danger', 'Not exist event');
     return res.redirect('back');
   }
   question.title = req.body.title;
@@ -213,7 +213,7 @@ router.post('/:id/answers', needAuth, catchErrors(async (req, res, next) => {
   const question = await Question.findById(req.params.id);
 
   if (!question) {
-    req.flash('danger', 'Not exist question');
+    req.flash('danger', 'Not exist event');
     return res.redirect('back');
   }
 
