@@ -67,7 +67,6 @@ function validateForm(form, options) {
   if (!locate) {
     return '위치를 지정하거나 입력해주세요!';
   }
-  return null;
 }
 
 // 동일한 코드가 users.js에도 있습니다. 이것은 나중에 수정합시다.
@@ -87,12 +86,15 @@ router.get('/', catchErrors(async (req, res, next) => {
 
   var query = {};
   const term = req.query.term;
+  const find = req.query.find;
   if (term) {
-    query = {$or: [
-      {title: {'$regex': term, '$options': 'i'}},
-      {content: {'$regex': term, '$options': 'i'}},
-      {locate: {'$regex': term, '$options': 'i'}},
-    ]};
+    if(find == "title"){
+      query = {$or: [ {title: {'$regex': term, '$options': 'i'}} ]};
+    } else if(find == "content"){
+      query = {$or: [ {content: {'$regex': term, '$options': 'i'}} ]};
+    } else if(find == "eventTopic"){
+      query = {$or: [ {eventTopic: {'$regex': term, '$options': 'i'}} ]};
+    }
   }
   const questions = await Question.paginate(query, {
     sort: {createdAt: -1}, 

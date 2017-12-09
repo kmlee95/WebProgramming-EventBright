@@ -7,9 +7,15 @@ block content
     | Browse Event
   .container
     form.form-inline.search-input-group(action='/questions', method='GET')
-      i.fa.fa-search
-      input.form-control.mr-sm-2(type='text', name='term', placeholder='Search', aria-label='Search', value=term)
-  
+      .col-md-1
+        select.form-control(name="find", rows="1")
+          option(value="title", name="find") 제목
+          option(value="content", name="find") 위치
+          option(value="eventTopic", name="find") 종류
+      .col-md-8
+        i.fa.fa-search
+        input.form-control.mr-sm-2(type='text', name='term', placeholder='Search', aria-label='Search', value=term)
+    
     h1.main-title 
       | Event List
       if questions.total > 0
