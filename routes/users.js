@@ -46,8 +46,14 @@ function validateForm(form, options) {
 
 /*관리자 setting*/
 router.get('/', needAuth, catchErrors(async (req, res, next) => {
-  const users = await User.find({});
-  res.render('users/index', {users: users});
+  const admin = req.user._id;
+  if(admin=="5a11bfedea58251750d91b00"){
+    const users = await User.find({});
+    res.render('users/index', {users: users});
+  }else{
+    req.flash('danger', '관리자만 가능합니다.');
+    return res.redirect('back');
+  }
 }));
 /*user 삭제*/
 router.delete('/:id', needAuth, catchErrors(async (req, res, next) => {
